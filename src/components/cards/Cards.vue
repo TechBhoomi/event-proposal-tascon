@@ -81,6 +81,23 @@ export default {
 </template>
 
 <style scoped>
+.card-wrapper {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.card-para {
+  display: -webkit-box;
+  -webkit-line-clamp: 3; /* Limits to 3 lines */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin: 0;
+  line-height: 1.5;
+}
+
 v-btn {
   margin-top: auto;
 }

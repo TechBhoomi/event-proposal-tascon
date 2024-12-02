@@ -3,6 +3,7 @@ import Cards from "./components/cards/Cards.vue";
 import Carousel from "./components/carousel/Carousel.vue";
 import NavBar from "./components/navBar/NavBar.vue";
 import About from "./components/about/About.vue";
+import Footer from "./components/footer/Footer.vue";
 </script>
 
 <template>
@@ -18,6 +19,7 @@ import About from "./components/about/About.vue";
       <v-container fluid="true">
         <Cards />
       </v-container>
+      <Footer/>
     </v-main>
   </v-app>
 </template>
