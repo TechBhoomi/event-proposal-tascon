@@ -17,10 +17,9 @@ export default {
 
 <template>
   <v-carousel
-    height="400"
+    height="600"
     show-arrows="hover"
     cycle
-    :interval="5000"
     hide-delimiter-background
     class="carouselForm"
   >
