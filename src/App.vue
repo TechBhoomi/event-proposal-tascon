@@ -19,7 +19,6 @@ import Footer from "./components/footer/Footer.vue";
       <v-container fluid="true">
         <Cards />
       </v-container>
-      <Footer/>
     </v-main>
   </v-app>
 </template>
