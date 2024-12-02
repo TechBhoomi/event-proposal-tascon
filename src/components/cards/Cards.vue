@@ -43,23 +43,35 @@ export default {
   <v-row dense>
     <v-col
       cols="12"
-      sm="6"
-      md="4"
-      lg="3"
+      sm="4"
+      md="3"
+      lg="2"
       v-for="(card, index) in cards"
       :key="index"
     >
-      <v-card class="card-wrapper" elevation="2">
+      <v-card
+        class="rounded-lg p-2"
+        elevation="2"
+        max-height="195"
+        color="#efefef"
+      >
         <v-card-text>
-          <p class="card-para">
+          <p>
             {{ card.para1 }}
           </p>
-          <p class="card-para">
+          <p>
             {{ card.para2 }}
           </p>
         </v-card-text>
         <v-card-actions>
-          <v-btn color="primary" block>
+          <v-btn
+            color="primary"
+            block
+            slim="true"
+            rounded
+            size="small"
+            variant="tonal"
+          >
             {{ card.buttonText }}
           </v-btn>
         </v-card-actions>
@@ -69,23 +81,6 @@ export default {
 </template>
 
 <style scoped>
-.card-wrapper {
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-
-.card-para {
-  display: -webkit-box;
-  -webkit-line-clamp: 3; /* Limits to 3 lines */
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  margin: 0;
-  line-height: 1.5;
-}
-
 v-btn {
   margin-top: auto;
 }
