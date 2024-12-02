@@ -20,6 +20,7 @@ export default {
     height="400"
     show-arrows="hover"
     cycle
+    :interval="5000"
     hide-delimiter-background
     class="carouselForm"
   >
