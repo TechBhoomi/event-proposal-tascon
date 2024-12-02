@@ -40,6 +40,8 @@ export default {
 </script>
 
 <template>
+      <section class="p-2">
+    <h1 class="text-h3 font-weight-medium pb-1">Courses</h1>
   <v-row dense>
     <v-col
       cols="12"
@@ -78,6 +80,7 @@ export default {
       </v-card>
     </v-col>
   </v-row>
+</section>
 </template>
 
 <style scoped>
@@ -90,7 +93,6 @@ export default {
 
 .card-para {
   display: -webkit-box;
-  -webkit-line-clamp: 3; /* Limits to 3 lines */
   -webkit-box-orient: vertical;
   overflow: hidden;
   text-overflow: ellipsis;
