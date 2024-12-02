@@ -9,14 +9,14 @@ import About from "./components/about/About.vue";
   <v-app>
     <NavBar />
     <v-main>
-      <v-container>
+      <v-container width="100%" fluid="true">
         <Carousel />
       </v-container>
-      <v-container>
+      <v-container fluid="true">
         <About />
       </v-container>
-       <v-container>
-       <Cards/>
+      <v-container fluid="true">
+        <Cards />
       </v-container>
     </v-main>
   </v-app>
