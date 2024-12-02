@@ -1,25 +1,13 @@
 <script setup>
-import HelloWorld from "./components/HelloWorld.vue";
+import Carousel from "./components/carousel/Carousel.vue";
 import NavBar from "./components/navBar/NavBar.vue";
 </script>
 
 <template>
-  <section>
-    <NavBar />
-  </section>
+  <!-- <section> -->
+  <NavBar />
+  <Carousel />
+  <!-- </section> -->
 </template>
 
-<style scoped>
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.vue:hover {
-  filter: drop-shadow(0 0 2em #42b883aa);
-}
-</style>
+<style scoped></style>
