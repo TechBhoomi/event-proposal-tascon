@@ -1,13 +1,12 @@
 <script setup>
-import Carousel from "./components/carousel/Carousel.vue";
-
-
-
+import HelloWorld from "./components/HelloWorld.vue";
+import NavBar from "./components/navBar/NavBar.vue";
 </script>
 
 <template>
-
-<Carousel/>
+  <section>
+    <NavBar />
+  </section>
 </template>
 
 <style scoped>
