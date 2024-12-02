@@ -15,6 +15,9 @@ import About from "./components/about/About.vue";
       <v-container>
         <About />
       </v-container>
+       <v-container>
+       <Cards/>
+      </v-container>
     </v-main>
   </v-app>
 </template>
