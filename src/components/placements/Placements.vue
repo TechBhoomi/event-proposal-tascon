@@ -1,14 +1,15 @@
 <template>
-  <v-container class="statistics-section" style="height: 60vh;" fluid>
+  <v-container class="statistics-section" fluid>
     <v-row align="center" justify="center" class="h-100">
       <v-col
         v-for="(stat, index) in animatedStats"
         :key="index"
         cols="12"
-        sm="4"
+        sm="6"
+        md="4"
+        lg="3"
         class="text-center"
       >
-     
         <h1 class="stat-number">{{ stat.currentValue }}+</h1>
         <p class="stat-label">{{ stat.label }}</p>
       </v-col>
@@ -22,7 +23,6 @@ import axios from "axios";
 
 const stats = ref([]);
 const animatedStats = ref([]);
-
 
 const fetchData = async () => {
   try {
@@ -40,27 +40,25 @@ const fetchData = async () => {
       { value: apiData.total_placed, label: "Total Placed" },
     ];
 
-    
     animatedStats.value = stats.value.map((stat) => ({
       ...stat,
-      currentValue: 0, 
+      currentValue: 0,
     }));
   } catch (error) {
     console.error("Failed to fetch data:", error);
   }
 };
 
-
 const startAnimation = () => {
   animatedStats.value.forEach((stat, index) => {
-    const increment = Math.ceil(stat.value / 50); 
+    const increment = Math.ceil(stat.value / 50);
     const interval = setInterval(() => {
       if (stat.currentValue < stat.value) {
         stat.currentValue += increment;
         if (stat.currentValue > stat.value) {
-          stat.currentValue = stat.value; 
+          stat.currentValue = stat.value;
         }
-        animatedStats.value[index] = { ...stat }; 
+        animatedStats.value[index] = { ...stat };
       } else {
         clearInterval(interval);
       }
@@ -69,19 +67,18 @@ const startAnimation = () => {
 };
 
 onMounted(async () => {
-  await fetchData(); 
-
+  await fetchData();
 
   const observer = new IntersectionObserver(
     (entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
           startAnimation();
-          observer.disconnect(); 
+          observer.disconnect();
         }
       });
     },
-    { threshold: 0.5 } 
+    { threshold: 0.5 }
   );
   const section = document.querySelector(".statistics-section");
   observer.observe(section);
@@ -96,22 +93,34 @@ onMounted(async () => {
   justify-content: center;
   color: white;
   text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.7);
-  background: linear-gradient(
-      rgba(0, 0, 0, 0.5),
-      rgba(0, 0, 0, 0.5)
-    ),
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
     url("https://acrossgeo.com/assets/img/stats-bg.jpg") center/cover no-repeat;
+  height: 60vh; 
 }
 
-.stat-number {
-  font-size: 3rem;
-  font-weight: bold;
-  margin: 0;
-  transition: 0.3s ease;
-}
+ .stat-number {
+    font-size: 2.5rem; 
+    font-weight: bold;
+  }
 
-.stat-label {
-  font-size: 1.2rem;
-  margin: 0;
+    .stat-label {
+    font-size: 1.5rem; 
+    font-weight: bold;
+  }
+
+@media (max-width: 768px) {
+  .statistics-section {
+    background-size: cover;
+    background-position: center;
+    height: 100vh; 
+  }
+
+  .stat-number {
+    font-size: 2rem; 
+  }
+
+  .stat-label {
+    font-size: 1rem; 
+  }
 }
 </style>
