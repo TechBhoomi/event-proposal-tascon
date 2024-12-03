@@ -11,13 +11,13 @@ import Placements from "./components/placements/Placements.vue";
   <v-app>
     <NavBar />
     <v-main>
-      <v-container width="100%" fluid="true">
+      <v-container width="100%" fluid="true" id="home">
         <Carousel />
       </v-container>
-      <v-container fluid="true">
+      <v-container fluid="true" id="about">
         <About />
       </v-container>
-      <v-container fluid="true">
+      <v-container fluid="true" width="100%" id="courses">
         <Cards />
       </v-container>
       <Placements />
