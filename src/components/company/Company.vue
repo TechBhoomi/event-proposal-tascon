@@ -1,10 +1,15 @@
 <template>
   <v-container class="partners-section" fluid>
-    <h1 class="text-center mb-4 font-weight-bold text-h4" style="font-size: 2rem;">Company Logos</h1>
+    <h1
+      class="text-center mb-4 font-weight-bold text-h4"
+      style="font-size: 2rem"
+    >
+      Our Hiring Partners
+    </h1>
     <div class="scroll-container">
       <div class="scroll-content">
         <v-col
-          v-for="(partner, index) in [...partners, ...partners]" 
+          v-for="(partner, index) in [...partners, ...partners]"
           :key="index"
           cols="auto"
           class="d-flex justify-center align-center partner-card"
@@ -24,19 +29,47 @@ import { ref } from "vue";
 
 // Updated partners data with links
 const partners = ref([
-  { name: "Philips", logo: "https://devplaced.qspiders.com/compLogo-04.svg", link: "https://www.philips.com" },
-  { name: "AECOM", logo: "https://devplaced.qspiders.com/compLogo05.svg", link: "https://www.aecom.com" },
-  { name: "Moderna", logo: "https://devplaced.qspiders.com/compLogo03.svg", link: "https://www.modernatx.com" },
-  { name: "Brother", logo: "https://devplaced.qspiders.com/compLogo01.svg", link: "https://www.brother.com" },
-  { name: "Wepik", logo: "https://devplaced.qspiders.com/compLogo06.svg", link: "https://www.wepik.com" },
-  { name: "Vaio", logo: "https://devplaced.qspiders.com/compLogo06.svg", link: "https://www.vaio.com" },
-  { name: "HTC", logo: "https://devplaced.qspiders.com/compLogo02.svg", link: "https://www.htc.com" },
+  {
+    name: "Philips",
+    logo: "https://devplaced.qspiders.com/compLogo-04.svg",
+    link: "https://www.philips.com",
+  },
+  {
+    name: "AECOM",
+    logo: "https://devplaced.qspiders.com/compLogo05.svg",
+    link: "https://www.aecom.com",
+  },
+  {
+    name: "Moderna",
+    logo: "https://devplaced.qspiders.com/compLogo03.svg",
+    link: "https://www.modernatx.com",
+  },
+  {
+    name: "Brother",
+    logo: "https://devplaced.qspiders.com/compLogo01.svg",
+    link: "https://www.brother.com",
+  },
+  {
+    name: "Wepik",
+    logo: "https://devplaced.qspiders.com/compLogo06.svg",
+    link: "https://www.wepik.com",
+  },
+  {
+    name: "Vaio",
+    logo: "https://devplaced.qspiders.com/compLogo06.svg",
+    link: "https://www.vaio.com",
+  },
+  {
+    name: "HTC",
+    logo: "https://devplaced.qspiders.com/compLogo02.svg",
+    link: "https://www.htc.com",
+  },
 ]);
 </script>
 
 <style scoped>
 .partners-section {
-  background-color: #fff6f0;
+  background-color: #fff;
   padding: 20px 0;
 }
 
@@ -75,7 +108,9 @@ const partners = ref([
     transform: translateX(0);
   }
   100% {
-    transform: translateX(-50%); /* Adjust based on the duplicated items for smooth loop */
+    transform: translateX(
+      -50%
+    ); /* Adjust based on the duplicated items for smooth loop */
   }
 }
 
