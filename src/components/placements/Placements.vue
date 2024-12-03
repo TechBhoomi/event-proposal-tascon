@@ -1,4 +1,7 @@
 <template>
+  <h1 class="text-center mb-4 font-weight-bold text-h4" style="font-size: 2rem">
+    Placement Statistics
+  </h1>
   <v-container class="statistics-section" fluid>
     <v-row align="center" justify="center" class="h-100">
       <v-col
@@ -40,7 +43,7 @@ const fetchData = async () => {
       { value: apiData.total_placed, label: "Total Placed" },
     ];
 
-    animatedStats.value = stats.value.map((stat) => ({
+    animatedStats.value = stats.value.map(stat => ({
       ...stat,
       currentValue: 0,
     }));
@@ -70,8 +73,8 @@ onMounted(async () => {
   await fetchData();
 
   const observer = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
+    entries => {
+      entries.forEach(entry => {
         if (entry.isIntersecting) {
           startAnimation();
           observer.disconnect();
@@ -95,32 +98,32 @@ onMounted(async () => {
   text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.7);
   background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
     url("https://acrossgeo.com/assets/img/stats-bg.jpg") center/cover no-repeat;
-  height: 60vh; 
+  height: 60vh;
 }
 
- .stat-number {
-    font-size: 2.5rem; 
-    font-weight: bold;
-  }
+.stat-number {
+  font-size: 2.5rem;
+  font-weight: bold;
+}
 
-    .stat-label {
-    font-size: 1.5rem; 
-    font-weight: bold;
-  }
+.stat-label {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
 
 @media (max-width: 768px) {
   .statistics-section {
     background-size: cover;
     background-position: center;
-    height: 100vh; 
+    height: 100vh;
   }
 
   .stat-number {
-    font-size: 2rem; 
+    font-size: 2rem;
   }
 
   .stat-label {
-    font-size: 1rem; 
+    font-size: 1rem;
   }
 }
 </style>
