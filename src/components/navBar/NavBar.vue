@@ -7,8 +7,8 @@
       style="font-weight: 600"
     >
       <section>
-        <a href="/" class="text-orange-400">Q-spiders</a>
-        <p class="text-xs">Largest Software Training Organization</p>
+        <a href="/" :class="logoClasses">Q-spiders</a>
+        <p :class="taglineClasses">Largest Software Training Organization</p>
       </section>
     </v-app-bar-title>
 
@@ -19,9 +19,12 @@
         :ripple="false"
         class="font-semibold d-none d-lg-flex"
       >
-        <a class="hover:text-orange-400 font-semibold" :href="item.link">
+        <router-link
+          class="hover:text-orange-400 font-semibold"
+          :to="item.link"
+        >
           {{ item.title }}
-        </a>
+        </router-link>
       </v-btn>
     </template>
   </v-app-bar>
@@ -45,15 +48,45 @@
 </template>
 
 <script setup>
-import { ref } from "vue";
+import { computed, ref } from "vue";
+import { useDisplay } from "vuetify/dist/vuetify-labs.js";
 
 const drawer = ref(false);
-
+const { xs, sm, md, lg, xl } = useDisplay();
+const logoClasses = computed(() => {
+  if (xs.value)
+    return "text-[1rem] font-bold font-bold text-start text-orange-400"; // Extra-small screens
+  if (sm.value)
+    return "text-[1.6rem] font-bold font-bold text-start text-orange-400"; // Small screens
+  if (md.value) return "text-[1rem]"; // bold screens
+  if (lg.value)
+    return "text-[1.6rem] font-bold font-bold text-start text-orange-400"; // Large screens
+  if (xl.value)
+    return "text-[1.6rem] font-bold font-bold text-start text-orange-400"; // Extra-large screens
+  return "h-auto"; // Default
+});
+const taglineClasses = computed(() => {
+  if (xs.value) {
+    return "text-sm font-semibold";
+  }
+  if (sm.value) {
+    return "text-base font-semibold";
+  }
+  if (md.value) {
+    return "text-base font-semibold";
+  }
+  if (lg.value) {
+    return "text-base font-semibold";
+  }
+  if (xl.value) {
+    return "text-base font-semibold";
+  }
+  return "text-base font-semibold";
+});
 const menuItems = [
-  { title: "About", link: "#about" },
-  { title: "Courses", link: "#courses" },
-  { title: "Placements", link: "#placements" },
-  { title: "Stats", link: "#stats" },
+  { title: "About", link: "/#about" },
+  { title: "Courses", link: "/#courses" },
+  { title: "Placements", link: "/#placements" },
 ];
 </script>
 
