@@ -6,6 +6,7 @@ import About from "./components/about/About.vue";
 
 import Placements from "./components/placements/Placements.vue";
 import Company from "./components/company/Company.vue";
+import WhyQspiders from "./components/whyqspiders/WhyQspiders.vue";
 </script>
 
 <template>
@@ -23,7 +24,7 @@ import Company from "./components/company/Company.vue";
       </v-container>
       <Company/>
       <Placements />
-
+<WhyQspiders/>
     </v-main>
   </v-app>
 </template>
