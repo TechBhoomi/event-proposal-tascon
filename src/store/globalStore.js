@@ -9,12 +9,12 @@ export const globalStore = defineStore("global-store", {
   }),
   actions: {
     async getCourseList() {
-      console.log(this.URL);
       try {
-        const response = axios.get(
+        const response = await axios.get(
           `${this.URL}categories/getAllCategories?organization=qspiders`
         );
-        console.log(response.data);
+        // console.log(response.data?.data, "response");
+        this.courseList = response.data.data;
       } catch (error) {
         console.log(error);
       }
