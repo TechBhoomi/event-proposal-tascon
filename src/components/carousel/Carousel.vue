@@ -17,7 +17,7 @@ export default {
 
 <template>
   <v-carousel
-    height="600"
+    height="500"
     show-arrows="hover"
     cycle
     hide-delimiter-background
