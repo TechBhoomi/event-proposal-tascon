@@ -48,6 +48,8 @@ export default {
       sm="4"
       md="3"
       lg="2"
+      gap="2"
+      align="center"
       v-for="(card, index) in cards"
       :key="index"
     >
