@@ -5,6 +5,7 @@ import NavBar from "./components/navBar/NavBar.vue";
 import About from "./components/about/About.vue";
 
 import Placements from "./components/placements/Placements.vue";
+import Company from "./components/company/Company.vue";
 </script>
 
 <template>
@@ -20,7 +21,9 @@ import Placements from "./components/placements/Placements.vue";
       <v-container fluid="true" width="100%" id="courses">
         <Cards />
       </v-container>
+      <Company/>
       <Placements />
+
     </v-main>
   </v-app>
 </template>
