@@ -98,7 +98,7 @@ onMounted(async () => {
   text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.7);
   background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
     url("https://acrossgeo.com/assets/img/stats-bg.jpg") center/cover no-repeat;
-  height: 60vh;
+  height: 50vh;
 }
 
 .stat-number {
