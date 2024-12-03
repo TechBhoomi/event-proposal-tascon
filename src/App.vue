@@ -12,9 +12,12 @@ import WhyQspiders from "./components/whyqspiders/WhyQspiders.vue";
 <template>
   <v-app>
     <NavBar />
-    <v-main>
+    <v-main class="bg-[#EEEEEE]">
       <v-container width="100%" fluid="true" id="home">
         <Carousel />
+      </v-container>
+      <v-container fluid="true" width="100%">
+        <Company />
       </v-container>
       <v-container fluid="true" id="about">
         <About />
@@ -22,9 +25,13 @@ import WhyQspiders from "./components/whyqspiders/WhyQspiders.vue";
       <v-container fluid="true" width="100%" id="courses">
         <Cards />
       </v-container>
-      <Company/>
-      <Placements />
-<WhyQspiders/>
+
+      <v-container fluid="true" width="100%" id="placements">
+        <Placements />
+      </v-container>
+      <v-container fluid="true" width="100%" id="whyQspiders">
+        <WhyQspiders />
+      </v-container>
     </v-main>
   </v-app>
 </template>
