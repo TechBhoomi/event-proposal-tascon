@@ -2,8 +2,16 @@
   <h1 :class="headingClasses" class="font-sans pb-3 text-[#FF7F3E]">
     Placement Statistics
   </h1>
-  <section class="statistics-section" fluid>
-    <v-row class="h-100">
+  <section class="statistics-section w-full">
+    <a
+      class="text-blue-500 pl-1 cursor-pointer w-full"
+      href="https://placements.qspiders.com/"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      <img :src="placement_stat" alt="" class="w-full" />
+    </a>
+    <!-- <v-row class="h-100">
       <v-col
         v-for="(stat, index) in animatedStats"
         :key="index"
@@ -17,24 +25,18 @@
           <div class="stat-label">{{ stat.label }}</div>
         </v-card>
       </v-col>
-    </v-row>
+    </v-row> -->
   </section>
-  <section class="font-poppins text-center pt-2">
+  <!-- <section class="font-poppins text-center pt-2">
     For more details
-    <a
-      class="text-blue-500 pl-1 cursor-pointer"
-      href="https://placements.qspiders.com/"
-      target="_blank"
-      rel="noopener noreferrer"
+   
     >
-      click Here.
-    </a>
-    >
-  </section>
+  </section> -->
 </template>
 
 <script setup>
 import { ref, onMounted, computed } from "vue";
+import placement_stat from "../../assets/placements_stats_.png";
 import axios from "axios";
 import { useDisplay } from "vuetify";
 const { xs, sm, md, lg, xl } = useDisplay();
@@ -112,12 +114,9 @@ const headingClasses = computed(() => {
 <style scoped>
 .statistics-section {
   display: flex;
+  align-items: center;
   justify-content: center;
-  padding: 2rem;
-  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-    url("https://acrossgeo.com/assets/img/stats-bg.jpg") center/cover no-repeat;
-  color: white;
-  /* text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.7); */
+  object-fit: cover;
 }
 
 .v-row {

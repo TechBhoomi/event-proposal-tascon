@@ -1,7 +1,7 @@
 <template>
-  <section class="p-2 lg:w-[100%] text-justify">
+  <section class="p-2 lg:w-[100%] text-justify" id="about-section">
     <h1 class="text-[#FF7F3E] font-sans pb-3" :class="headingClasses">
-      Why Qspiders?
+      Why QSpiders?
     </h1>
     <section class="text-xl">
       <ul class="custom-list font-poppins font-semibold text-sm">
@@ -80,5 +80,12 @@ const listClasses = computed(() => {
   margin-right: 10px;
   font-size: 1.4rem;
   line-height: 1;
+}
+#about-section {
+  padding: 1rem;
+  /* background: linear-gradient(rgba(0, 0, 0, 0.048), rgba(0, 0, 0, 0.055)),
+    url("https://devplaced.qspiders.com/_next/image?url=%2FBackgroundWave.png&w=384&q=75") center/cover no-repeat; */
+      background: linear-gradient(rgba(0, 0, 0, 0.048), rgba(0, 0, 0, 0.055)),
+    url("https://devplaced.qspiders.com/illustrate_wave.svg") center/cover no-repeat;
 }
 </style>

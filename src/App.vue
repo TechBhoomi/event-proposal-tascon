@@ -8,7 +8,8 @@ import Placements from "./components/placements/Placements.vue";
 import Company from "./components/company/Company.vue";
 import WhyQspiders from "./components/whyqspiders/WhyQspiders.vue";
 import Footer from "./components/footer/Footer.vue";
-import { ref } from "vue";
+import branch_img from "./assets/branch_details.png";
+import { computed, onBeforeMount, ref } from "vue";
 
 // Track the current scroll position
 const isAtBottom = ref(false);
@@ -38,6 +39,22 @@ const scrollToBottom = () => {
 // Add event listener for scroll
 window.addEventListener("scroll", handleScroll);
 
+import { useDisplay } from "vuetify";
+import { useRoute, useRouter } from "vue-router";
+const { xs, sm, md, lg, xl } = useDisplay();
+
+const headingClasses = computed(() => {
+  if (xs.value) return "text-[2rem] font-bold  text-start"; // Extra-small screens
+  if (sm.value) return "text-[2rem] font-bold  text-start"; // Small screens
+  if (md.value) return "text-[2.5rem] font-bold  text-start"; // bold screens
+  if (lg.value) return "text-[2.5rem] font-bold  text-start"; // Large screens
+  if (xl.value) return "text-[2.5rem] font-bold  text-start"; // Extra-large screens
+  return "text-[2.5rem] font-bold text-start"; // Default
+});
+let router = useRouter();
+onBeforeMount(() => {
+  router.push("/");
+});
 </script>
 
 <template>
@@ -50,8 +67,11 @@ window.addEventListener("scroll", handleScroll);
       <!-- <v-container fluid="true" width="100%">
         <Company />
       </v-container> -->
-      <v-container fluid="true" id="about">
+      <!-- <v-container fluid="true" id="about">
         <About />
+      </v-container> -->
+       <v-container fluid="true" width="100%" id="whyQspiders">
+        <WhyQspiders />
       </v-container>
       <v-container fluid="true" width="100%" id="placements">
         <Placements />
@@ -59,14 +79,18 @@ window.addEventListener("scroll", handleScroll);
       <v-container fluid="true" width="100%" id="courses" class="pa-3">
         <Cards />
       </v-container>
-      <v-container fluid="true" width="100%" id="whyQspiders">
-        <WhyQspiders />
+      <v-container fluid="true" width="100%" class="pa-3">
+        <h3 :class="headingClasses" class="text-[#FF7F3E]">Branches</h3>
+        <section class="flex w-full items-center justify-center">
+          <img :src="branch_img" alt="" />
+        </section>
       </v-container>
+     
       <v-container fluid="true" width="100%">
         <Footer class="static" />
       </v-container>
     </v-main>
-     <!-- Scroll buttons -->
+    <!-- Scroll buttons -->
     <div class="scroll-buttons">
       <button v-if="isAtBottom" class="scroll-button up" @click="scrollToTop">
         ↑
@@ -75,7 +99,6 @@ window.addEventListener("scroll", handleScroll);
         ↓
       </button>
     </div>
-
   </v-app>
 </template>
 
@@ -109,5 +132,4 @@ window.addEventListener("scroll", handleScroll);
   background-color: #fb8c00;
   transform: scale(1.1);
 }
-
 </style>
