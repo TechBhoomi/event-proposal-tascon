@@ -20,10 +20,15 @@
     </v-row>
   </section>
   <section class="font-poppins text-center pt-2">
-    For more details<a
+    For more details
+    <a
       class="text-blue-500 pl-1 cursor-pointer"
       href="https://placements.qspiders.com/"
-      >click Here.</a
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      click Here.
+    </a>
     >
   </section>
 </template>
