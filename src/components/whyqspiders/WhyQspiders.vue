@@ -1,36 +1,36 @@
 <template>
   <section class="p-2 lg:w-[100%] text-justify">
-    <h1 class="text-[#FF7F3E] font-sans" :class="headingClasses">
+    <h1 class="text-[#FF7F3E] font-sans pb-3" :class="headingClasses">
       Why Qspiders?
     </h1>
     <section class="text-xl">
       <ul class="custom-list font-poppins font-semibold text-sm">
-        <li class="sm:text-sm text-base pb-3">
+        <li class="pb-3" :class="listClasses">
           On-demand Upskilling, Reskilling & Cross-skilling for hired resource
           on vanilla skills.
         </li>
-        <li class="sm:text-sm text-base pb-3">
+        <li class="pb-3" :class="listClasses">
           Tailor made experiential learning programs.
         </li>
-        <li class="sm:text-sm text-base pb-3">
+        <li class="pb-3" :class="listClasses">
           Dedicated facilities & team for hiring support.
         </li>
-        <li class="sm:text-sm text-base pb-3">
+        <li class="pb-3" :class="listClasses">
           22,000+ Trained resource ready for hiring.
         </li>
-        <li class="sm:text-sm text-base pb-3">
+        <li class="pb-3" :class="listClasses">
           10,800+ Female trained resource available for diversity hiring.
         </li>
-        <li class="sm:text-sm text-base pb-3">
+        <li class="pb-3" :class="listClasses">
           17,300+ Trained resource available having below 4 lakh family income.
         </li>
-        <li class="sm:text-sm text-base pb-3">
+        <li class="pb-3" :class="listClasses">
           14,900+ Trained resource with 60% throughout in their academics.
         </li>
-        <li class="sm:text-sm text-base pb-3">
+        <li class="pb-3" :class="listClasses">
           7,200+ Trained resource above 65% throughout in their academics.
         </li>
-        <li class="sm:text-sm text-base pb-3">
+        <li class="pb-3" :class="listClasses">
           8,500+ Trained resource available in Pune/Mumbai.
         </li>
       </ul>
@@ -46,10 +46,18 @@ const { xs, sm, md, lg, xl } = useDisplay();
 const headingClasses = computed(() => {
   if (xs.value) return "text-[2rem] font-bold font-bold text-start"; // Extra-small screens
   if (sm.value) return "text-[2rem] font-bold font-bold text-start"; // Small screens
-  if (md.value) return "text-[3rem] font-bold font-bold text-start"; // bold screens
-  if (lg.value) return "text-[3rem] font-bold font-bold text-start"; // Large screens
-  if (xl.value) return "text-[3rem] font-bold font-bold text-start"; // Extra-large screens
-  return "h-auto"; // Default
+  if (md.value) return "text-[2.5rem] font-bold font-bold text-start"; // bold screens
+  if (lg.value) return "text-[2.5rem] font-bold font-bold text-start"; // Large screens
+  if (xl.value) return "text-[2.5rem] font-bold font-bold text-start"; // Extra-large screens
+  return "text-[2.5rem] font-bold font-bold text-start"; // Default
+});
+const listClasses = computed(() => {
+  if (xs.value) return "text-[0.9rem] text-start "; // Extra-small screens
+  if (sm.value) return "text-[0.9rem] text-start"; // Small screens
+  if (md.value) return "text-[1rem] text-start"; // bold screens
+  if (lg.value) return "text-[2rem] text-start"; // Large screens
+  if (xl.value) return "text-[1.1rem] text-start"; // Extra-large screens
+  return "text-[1.1rem] text-start"; // Default
 });
 </script>
 
