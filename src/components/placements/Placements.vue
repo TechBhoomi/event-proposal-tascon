@@ -4,7 +4,7 @@
   </h1>
   <section class="statistics-section w-full">
     <a
-      class="text-blue-500 pl-1 cursor-pointer"
+      class="text-blue-500 pl-1 cursor-pointer w-full"
       href="https://placements.qspiders.com/"
       target="_blank"
       rel="noopener noreferrer"
