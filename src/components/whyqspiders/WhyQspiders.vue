@@ -44,18 +44,18 @@ import { useDisplay } from "vuetify";
 const { xs, sm, md, lg, xl } = useDisplay();
 
 const headingClasses = computed(() => {
-  if (xs.value) return "text-[2rem] font-bold font-bold text-start"; // Extra-small screens
-  if (sm.value) return "text-[2rem] font-bold font-bold text-start"; // Small screens
-  if (md.value) return "text-[2.5rem] font-bold font-bold text-start"; // bold screens
-  if (lg.value) return "text-[2.5rem] font-bold font-bold text-start"; // Large screens
-  if (xl.value) return "text-[2.5rem] font-bold font-bold text-start"; // Extra-large screens
-  return "text-[2.5rem] font-bold font-bold text-start"; // Default
+  if (xs.value) return "text-[2rem] font-bold  text-start"; // Extra-small screens
+  if (sm.value) return "text-[2rem] font-bold  text-start"; // Small screens
+  if (md.value) return "text-[2.5rem] font-bold  text-start"; // bold screens
+  if (lg.value) return "text-[2.5rem] font-bold  text-start"; // Large screens
+  if (xl.value) return "text-[2.5rem] font-bold  text-start"; // Extra-large screens
+  return "text-[2.5rem] font-bold text-start"; // Default
 });
 const listClasses = computed(() => {
   if (xs.value) return "text-[0.9rem] text-start "; // Extra-small screens
   if (sm.value) return "text-[0.9rem] text-start"; // Small screens
   if (md.value) return "text-[1rem] text-start"; // bold screens
-  if (lg.value) return "text-[2rem] text-start"; // Large screens
+  if (lg.value) return "text-[1.1rem] text-start"; // Large screens
   if (xl.value) return "text-[1.1rem] text-start"; // Extra-large screens
   return "text-[1.1rem] text-start"; // Default
 });
