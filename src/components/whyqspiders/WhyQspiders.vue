@@ -4,45 +4,23 @@
     <section class="text-xl">
       <ul class="custom-list pl-6">
         <li>
-          Qspiders provides industry-relevant training to bridge the gap between
-          academics and the IT industry.
+          On-demand Upskilling,, Reskilling & Cross-skilling for hired resource
+          on vanilla skills.
+        </li>
+        <li>Tailor made experiential learning programs.</li>
+        <li>Dedicated facilities & team for hiring support.</li>
+        <li>22,000+ Trained resource ready for hiring.</li>
+        <li>10,800+ Female trained resource available for diversity hiring.</li>
+        <li>
+          17,300+ Trained resource available having below 4 lakh family income.
         </li>
         <li>
-          Experienced mentors ensure hands-on learning, preparing students for
-          real-world challenges.
+          14,900+ Trained resource with 60% throughout in their academics.
         </li>
         <li>
-          Extensive placement support helps students secure jobs in top
-          companies globally.
+          7,200+ Trained resource above 65% throughout in their academics.
         </li>
-        <li>
-          Specialized courses in software testing and development to enhance
-          technical skills.
-        </li>
-        <li>
-          Interactive sessions and regular assessments boost confidence and
-          learning outcomes.
-        </li>
-        <li>
-          Qspiders provides industry-relevant training to bridge the gap between
-          academics and the IT industry.
-        </li>
-        <li>
-          Experienced mentors ensure hands-on learning, preparing students for
-          real-world challenges.
-        </li>
-        <li>
-          Extensive placement support helps students secure jobs in top
-          companies globally.
-        </li>
-        <li>
-          Specialized courses in software testing and development to enhance
-          technical skills.
-        </li>
-        <li>
-          Interactive sessions and regular assessments boost confidence and
-          learning outcomes.
-        </li>
+        <li>8,500+ Trained resource available in Pune/Mumbai.</li>
       </ul>
     </section>
   </section>
