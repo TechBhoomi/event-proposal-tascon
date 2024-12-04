@@ -8,10 +8,10 @@
         About Qspiders
       </h1>
       <section class="text-xl font-poppins text-justify">
-        World's premier software training institution, dedicated to bridging the
-        gap between industry demands and academic curricula. With centers
-        worldwide, Qspiders provides a platform for young minds to cultivate
-        successful careers.
+        QSpiders - the leading technology training organization, was started
+        with the goal of bridging the gap between industry demands and academic
+        curriculums. It is designed to work as a 'Finishing School' and is
+        modelled with several learning programs.
       </section>
     </article>
   </section>
