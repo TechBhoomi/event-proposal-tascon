@@ -7,6 +7,7 @@ import About from "./components/about/About.vue";
 import Placements from "./components/placements/Placements.vue";
 import Company from "./components/company/Company.vue";
 import WhyQspiders from "./components/whyqspiders/WhyQspiders.vue";
+import Footer from "./components/footer/Footer.vue";
 </script>
 
 <template>
@@ -25,12 +26,14 @@ import WhyQspiders from "./components/whyqspiders/WhyQspiders.vue";
       <v-container fluid="true" width="100%" id="courses">
         <Cards />
       </v-container>
-
       <v-container fluid="true" width="100%" id="placements">
         <Placements />
       </v-container>
       <v-container fluid="true" width="100%" id="whyQspiders">
         <WhyQspiders />
+      </v-container>
+      <v-container fluid="true" width="100%">
+        <Footer class="static" />
       </v-container>
     </v-main>
   </v-app>
