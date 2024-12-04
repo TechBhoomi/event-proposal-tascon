@@ -23,10 +23,10 @@ const titleClases = computed(() => {
 const headingClasses = computed(() => {
   if (xs.value) return "text-[2rem] font-bold font-bold text-start"; // Extra-small screens
   if (sm.value) return "text-[2rem] font-bold font-bold text-start"; // Small screens
-  if (md.value) return "text-[3rem] font-bold font-bold text-start"; // bold screens
-  if (lg.value) return "text-[3rem] font-bold font-bold text-start"; // Large screens
-  if (xl.value) return "text-[3rem] font-bold font-bold text-start"; // Extra-large screens
-  return "h-auto"; // Default
+  if (md.value) return "text-[2.5rem] font-bold font-bold text-start"; // bold screens
+  if (lg.value) return "text-[2.5rem] font-bold font-bold text-start"; // Large screens
+  if (xl.value) return "text-[2.5rem] font-bold font-bold text-start"; // Extra-large screens
+  return "text-[2.5rem] font-bold font-bold text-start"; // Default
 });
 const courseSectionPadding = computed(() => {
   if (xs.value) return "p-3"; // Extra-small screens
