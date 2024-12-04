@@ -2,7 +2,7 @@
   <v-footer
     fluid="true"
     class="text-center d-flex flex-column"
-    style="background-color: #3C3D37"
+    style="background-color: #3c3d37"
   >
     <div>
       <v-btn
@@ -16,9 +16,28 @@
       ></v-btn>
     </div>
 
-    <div class="pt-0 contact-us text-[#fff]">Contact Us</div>
+    <div class="pt-0 contact-us text-[#efefef] underline underline-offset-4">
+      Contact Us
+    </div>
 
     <div class="contact-details pt-2">
+      <section>
+        <div>
+          <v-icon>mdi-phone</v-icon>
+          <span class="ml-2 text-[#efefef]"
+            >+91 97424 90958 / +91 89519 66099</span
+          >
+        </div>
+        <div>
+          <v-icon color="#efefef">mdi-email</v-icon>
+          <span class="ml-2 text-[#efefef]">hire@qspiders.com</span>
+        </div>
+      </section>
+    </div>
+
+    <!-- <div class="pt-0 contact-us text-[#fff]">Contact Us</div> -->
+
+    <!-- <div class="contact-details pt-2">
       <v-row justify="center">
         <v-col cols="auto" class="d-flex align-center text-[#fff]">
           <v-icon>mdi-phone</v-icon>
@@ -29,7 +48,7 @@
           <span class="ml-2 text-[#fff]">hire@qspiders.com</span>
         </v-col>
       </v-row>
-    </div>
+    </div> -->
   </v-footer>
 </template>
 
@@ -79,16 +98,6 @@ export default {
 </script>
 
 <style scoped>
-.contact-us {
-  font-weight: bold;
-  font-size: 1.5rem;
-}
-
-.contact-details {
-  font-size: 1.2rem;
-  font-weight: bold;
-  color: #333;
-}
 
 .v-btn {
   font-size: 1.5rem;
