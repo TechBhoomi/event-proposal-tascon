@@ -1,5 +1,6 @@
 <template>
   <v-footer
+    fluid="true"
     class="text-center d-flex flex-column"
     style="background-color: #eeee"
   >

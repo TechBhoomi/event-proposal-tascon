@@ -1,6 +1,9 @@
 <template>
   <v-container class="partners-section" fluid>
-    <h1 class="text-center mb-4 font-weight-bold text-h4" style="font-size: 2rem">
+    <h1
+      class="text-center mb-4 font-weight-bold text-h4"
+      style="font-size: 2rem"
+    >
       Our Customers
     </h1>
     <div class="scroll-container">
@@ -9,11 +12,11 @@
           v-for="(partner, index) in [...partners, ...partners]"
           :key="index"
           cols="auto"
-          class="d-flex justify-center align-center partner-card"
+          class="d-flex justify-center align-center partner-card h-8 aspect-auto"
         >
           <!-- Link wrapping the logo and displaying the partner name below the image -->
           <a :href="partner.link" target="_blank" rel="noopener noreferrer">
-            <img :src="partner.logo" :alt="partner.name" class="partner-logo" />
+            <img :src="partner.logo" :alt="partner.name" class="partner-logo h-10" />
             <div class="partner-name">{{ partner.name }}</div>
           </a>
         </v-col>
@@ -73,7 +76,7 @@ const partners = ref([
     logo: "http://api.qspiders.com/media/clients/3dplm_XXe7oH6.png",
     link: "https://3dplmsoftware.com/",
   },
- 
+
   {
     // name: "Metricstream",
     logo: "http://api.qspiders.com/media/clients/Metric_stream_qYDZUOg.png",
@@ -99,7 +102,7 @@ const partners = ref([
 
 <style scoped>
 .partners-section {
-  background-color: #c6e7ff;
+  background-color: #eeee;
 }
 
 .scroll-container {
@@ -115,8 +118,6 @@ const partners = ref([
 }
 
 .partner-card {
-  min-width: 120px;
-  height: 80px;
   border: 1px solid #e0e0e0;
   border-radius: 8px;
   background-color: #fff;
@@ -124,12 +125,12 @@ const partners = ref([
   display: inline-flex;
   justify-content: center;
   align-items: center;
+  object-fit: cover;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .partner-logo {
-  max-width: 100%;
-  max-height: 100%;
+  aspect-ratio: 16 / 9;
 }
 
 .partner-name {

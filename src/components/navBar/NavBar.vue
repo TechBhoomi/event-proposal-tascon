@@ -1,4 +1,20 @@
 <template>
+  <template>
+    <v-btn @click="dialog = true"> Open Dialog </v-btn>
+
+    <v-dialog v-model="dialog" width="auto">
+      <v-card
+        max-width="400"
+        prepend-icon="mdi-update"
+        text="Your application will relaunch automatically after the update is complete."
+        title="Update in progress"
+      >
+        <template v-slot:actions>
+          <v-btn class="ms-auto" text="Ok" @click="dialog = false"></v-btn>
+        </template>
+      </v-card>
+    </v-dialog>
+  </template>
   <!-- App Bar -->
   <v-app-bar :elevation="2">
     <v-app-bar-nav-icon @click="drawer = !drawer" class="d-lg-none" />
@@ -7,7 +23,7 @@
       style="font-weight: 600"
     >
       <section>
-        <a href="/" :class="logoClasses">Q-spiders</a>
+        <router-link to="/" :class="logoClasses">Q-spiders</router-link>
         <p :class="taglineClasses">Largest Software Training Organization</p>
       </section>
     </v-app-bar-title>
@@ -17,14 +33,18 @@
         v-for="item in menuItems"
         :key="item.title"
         :ripple="false"
-        class="font-semibold d-none d-lg-flex"
+        @click="navigateToSection(item?.link)"
+        class="d-none d-lg-flex hover:text-orange-400 font-semibold"
       >
-        <router-link
+        <!-- <router-link
           class="hover:text-orange-400 font-semibold"
           :to="item.link"
-        >
-          {{ item.title }}
-        </router-link>
+        > -->
+        {{ item.title }}
+        <!-- </router-link> -->
+      </v-btn>
+      <v-btn class="font-semibold" @click="dialog = true">
+        <span class="font-semibold"> Contact </span>
       </v-btn>
     </template>
   </v-app-bar>
@@ -38,10 +58,16 @@
         @click="drawer = false"
       >
         <v-list-item-title
-          ><span class="hover:text-orange-400 font-semibold">
+          ><router-link
+            class="hover:text-orange-400 font-semibold"
+            :to="item.link"
+          >
             {{ item.title }}
-          </span></v-list-item-title
+          </router-link></v-list-item-title
         >
+      </v-list-item>
+      <v-list-item>
+        <v-list-item-title>Contact</v-list-item-title>
       </v-list-item>
     </v-list>
   </v-navigation-drawer>
@@ -49,6 +75,7 @@
 
 <script setup>
 import { computed, ref } from "vue";
+import { useRouter } from "vue-router";
 import { useDisplay } from "vuetify/dist/vuetify-labs.js";
 
 const drawer = ref(false);
@@ -83,11 +110,16 @@ const taglineClasses = computed(() => {
   }
   return "text-base font-semibold";
 });
+const router = useRouter();
+const navigateToSection = section => {
+  router.push(section);
+};
 const menuItems = [
   { title: "About", link: "/#about" },
   { title: "Courses", link: "/#courses" },
   { title: "Placements", link: "/#placements" },
 ];
+let dialog = ref(false);
 </script>
 
 <style scoped>

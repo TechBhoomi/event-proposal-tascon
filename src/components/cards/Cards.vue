@@ -5,10 +5,10 @@ import { useDisplay } from "vuetify";
 
 const { xs, sm, md, lg, xl } = useDisplay();
 const cardHeightClasses = computed(() => {
-  if (xs.value) return "h-56"; // Extra-small screens
-  if (sm.value) return "h-56"; // Small screens
+  if (xs.value) return "h-60"; // Extra-small screens
+  if (sm.value) return "h-60"; // Small screens
   if (md.value) return "h-64"; // Medium screens
-  if (lg.value) return "h-48"; // Large screens
+  if (lg.value) return "h-52"; // Large screens
   if (xl.value) return "h-44"; // Extra-large screens
   return "h-56"; // Default
 });
@@ -28,6 +28,14 @@ const headingClasses = computed(() => {
   if (xl.value) return "text-[3rem] font-bold font-bold text-start"; // Extra-large screens
   return "h-auto"; // Default
 });
+const courseSectionPadding = computed(() => {
+  if (xs.value) return "p-3"; // Extra-small screens
+  if (sm.value) return "p-3"; // Small screens
+  if (md.value) return "p-10"; // bold screens
+  if (lg.value) return "p-10"; // Large screens
+  if (xl.value) return "p-10"; // Extra-large screens
+  return "p-10"; // Default
+});
 
 const GLOBAL_STORE = globalStore();
 const courseList = computed(() => GLOBAL_STORE.$state.courseList);
@@ -41,7 +49,7 @@ onBeforeMount(async () => {
     <h1 class="font-sans text-[#FF7F3E] pb-3" :class="headingClasses">
       Courses
     </h1>
-    <article class="p-10 rounded-3xl m-auto bg-[#EEEEEE]">
+    <article class="rounded-3xl m-auto bg-[#EEEEEE]" :class="courseSectionPadding">
       <v-row :no-gutters="false">
         <v-col
           cols="12"
