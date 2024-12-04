@@ -13,7 +13,7 @@ import Footer from "./components/footer/Footer.vue";
 <template>
   <v-app>
     <NavBar />
-    <v-main class="bg-[#EEEEEE]">
+    <v-main>
       <v-container width="100%" fluid="true" id="home">
         <Carousel />
       </v-container>
@@ -23,7 +23,12 @@ import Footer from "./components/footer/Footer.vue";
       <v-container fluid="true" id="about">
         <About />
       </v-container>
-      <v-container fluid="true" width="100%" id="courses">
+      <v-container
+        fluid="true"
+        width="100%"
+        id="courses"
+        class="pa-3"
+      >
         <Cards />
       </v-container>
       <v-container fluid="true" width="100%" id="placements">
