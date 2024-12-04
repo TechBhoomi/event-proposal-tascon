@@ -16,10 +16,19 @@ const titleClases = computed(() => {
   if (xs.value) return "text-[1rem] font-bold font-bold text-start"; // Extra-small screens
   if (sm.value) return "text-[1.2rem] font-bold font-bold text-start"; // Small screens
   if (md.value) return "text-[1rem]"; // bold screens
-  if (lg.value) return "text-[1rem] font-bold font-bold text-start"; // Large screens
-  if (xl.value) return "text-lg font-bold font-bold text-start"; // Extra-large screens
+  if (lg.value) return "text-[1.2rem] font-bold font-bold text-start"; // Large screens
+  if (xl.value) return "text-xl font-bold font-bold text-start"; // Extra-large screens
   return "h-auto"; // Default
 });
+const headingClasses = computed(() => {
+  if (xs.value) return "text-[2rem] font-bold font-bold text-start"; // Extra-small screens
+  if (sm.value) return "text-[2rem] font-bold font-bold text-start"; // Small screens
+  if (md.value) return "text-[3rem] font-bold font-bold text-start"; // bold screens
+  if (lg.value) return "text-[3rem] font-bold font-bold text-start"; // Large screens
+  if (xl.value) return "text-[3rem] font-bold font-bold text-start"; // Extra-large screens
+  return "h-auto"; // Default
+});
+
 const GLOBAL_STORE = globalStore();
 const courseList = computed(() => GLOBAL_STORE.$state.courseList);
 onBeforeMount(async () => {
@@ -28,39 +37,43 @@ onBeforeMount(async () => {
 </script>
 
 <template>
-  <section class="pt-7 pb-7">
-    <h1 class="text-h3 font-weight-bold pb-4">Courses</h1>
-    <v-row :no-gutters="false">
-      <v-col
-        cols="12"
-        sm="6"
-        md="6"
-        lg="4"
-        gap="2"
-        align="center"
-        v-for="(course, index) in courseList[0]?.courseResponse"
-        :key="index"
-      >
-        <v-card :class="cardHeightClasses" :hover="true" rounded="lg">
-          <section class="p-3">
-            <div class="flex gap-2 justify-start items-center">
-              <img :src="course?.icon" alt="" class="h-8 h" />
-              <div :class="titleClases">
-                {{ course?.title }}
+  <section>
+    <h1 class="font-sans text-[#FF7F3E] pb-3" :class="headingClasses">
+      Courses
+    </h1>
+    <article class="p-10 rounded-3xl m-auto bg-[#EEEEEE]">
+      <v-row :no-gutters="false">
+        <v-col
+          cols="12"
+          sm="6"
+          md="6"
+          lg="4"
+          gap="2"
+          align="center"
+          v-for="(course, index) in courseList[0]?.courseResponse"
+          :key="index"
+        >
+          <v-card :class="cardHeightClasses" :hover="true" rounded="lg">
+            <section class="p-3">
+              <div class="flex gap-2 justify-start items-center">
+                <img :src="course?.icon" alt="" class="h-10" />
+                <div :class="titleClases" class="font-sans">
+                  {{ course?.title }}
+                </div>
               </div>
-            </div>
-          </section>
-          <section class="p-3">
-            <div class="text-justify text-base font-medium">
-              {{ course?.description }}
-            </div>
-            <div>
-              <!-- <v-btn>View</v-btn> -->
-            </div>
-          </section>
-        </v-card>
-      </v-col>
-    </v-row>
+            </section>
+            <section class="p-3">
+              <div class="text-justify text-base font-poppins">
+                {{ course?.description }}
+              </div>
+              <div>
+                <!-- <v-btn>View</v-btn> -->
+              </div>
+            </section>
+          </v-card>
+        </v-col>
+      </v-row>
+    </article>
   </section>
 </template>
 
