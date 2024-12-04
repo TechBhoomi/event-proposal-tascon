@@ -165,8 +165,8 @@ const fetchData = async () => {
     const apiData = response.data;
     stats.value = [
       { value: apiData.total_placed, label: "Total Placed" },
-      { value: apiData.less_than_60, label: "Less than 60% in degree" },
-      { value: apiData.non_it, label: "NON_IT" },
+      { value: apiData.less_than_60, label: "Less than 60% in Degree" },
+      { value: apiData.non_it, label: "Non_IT" },
       { value: apiData.it, label: "IT/CS/IS Candidates" },
       { value: apiData.above_60, label: "Throughout 60%" },
     ];
@@ -224,7 +224,7 @@ onMounted(async () => {
   background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
     url("https://acrossgeo.com/assets/img/stats-bg.jpg") center/cover no-repeat;
   color: white;
-  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.7);
+  /* text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.7); */
 }
 
 .v-row {
@@ -256,7 +256,7 @@ onMounted(async () => {
 .stat-label {
   font-size: 1.2rem;
   font-weight: bold;
-  color: #333;
+  color: #222;
 }
 
 @media (max-width: 768px) {
