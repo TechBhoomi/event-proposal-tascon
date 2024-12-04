@@ -19,13 +19,16 @@
       </v-col>
     </v-row>
   </section>
+  <section class="font-poppins text-center p-1">
+    For more details<a class="text-blue-500 pl-1 cursor-pointer" href="https://placements.qspiders.com/">click Here.</a>
+  </section>
 </template>
 
 <script setup>
 import { ref, onMounted, computed } from "vue";
 import axios from "axios";
 import { useDisplay } from "vuetify";
-const { xs, sm, md, lg, xl } = useDisplay()
+const { xs, sm, md, lg, xl } = useDisplay();
 const stats = ref([]);
 const animatedStats = ref([]);
 
@@ -131,7 +134,7 @@ const headingClasses = computed(() => {
 .stat-number {
   font-size: 2.5rem;
   font-weight: bold;
-  color: #86A7FC;
+  color: #86a7fc;
 }
 
 .stat-label {
