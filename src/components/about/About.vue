@@ -1,17 +1,14 @@
 <template>
   <section class="text-justify flex items-center justify-between pb-2">
     <article class="flex flex-col justify-start">
-      <h1
-        class="pb-3 font-sans text-[#FF7F3E]"
-        :class="headingClasses"
-      >
+      <h1 class="pb-3 font-sans text-[#FF7F3E]" :class="headingClasses">
         About Qspiders
       </h1>
       <section class="text-xl font-poppins">
-        World's premier software training institution, dedicated to bridging the
-        gap between industry demands and academic curricula. With centers
-        worldwide, Qspiders provides a platform for young minds to cultivate
-        successful careers
+        QSpiders - the leading technology training organization, was started
+        with the goal of bridging the gap between industry demands and academic
+        curriculums. It is designed to work as a 'Finishing School' and is
+        modelled with several learning programs.
       </section>
     </article>
     <article :class="imageClasses">
