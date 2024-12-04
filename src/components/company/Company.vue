@@ -28,79 +28,71 @@ import { ref } from "vue";
 // Updated partners data with links
 const partners = ref([
   {
-    name: "Philips",
+    // name: "Deloitte",
     logo: "http://api.qspiders.com/media/clients/Deliotte_C9ukSJM_1_yA82JEr.png",
-    link: "https://www.philips.com",
+    link: "https://www2.deloitte.com/in/en.html",
   },
   {
-    name: "AECOM",
+    // name: "Capgemini",
     logo: "http://api.qspiders.com/media/clients/Capegemini_60.png",
-    link: "https://www.aecom.com",
+    link: "https://www.capgemini.com/ ",
   },
   {
-    name: "Moderna",
+    // name: "Integra",
     logo: "http://api.qspiders.com/media/clients/Integra_Micro_Systems_chIzJjj.jpg",
-    link: "https://www.modernatx.com",
+    link: "https://www.integramicro.com/ ",
   },
+
   {
-    name: "Brother",
-    logo: "http://api.qspiders.com/media/clients/sharp_sZ49lwe.png",
-    link: "https://www.brother.com",
-  },
-  {
-    name: "Wepik",
+    // name: "EFI",
     logo: "http://api.qspiders.com/media/clients/EFI_pdQaA6e.png",
-    link: "https://www.wepik.com",
+    link: "https://www.efi.com/",
   },
   {
-    name: "Vaio",
+    // name: "Arisglobal",
     logo: "http://api.qspiders.com/media/clients/arisglobal-logo-new_0_ijEbzaU.png",
-    link: "https://www.vaio.com",
+    link: "https://www.arisglobal.com/",
   },
   {
-    name: "Vaio",
+    // name: "Atos",
     logo: "http://api.qspiders.com/media/clients/atos_logo_4i8GHxl_60.jpg",
-    link: "https://www.vaio.com",
+    link: "https://atos.net/en/ ",
   },
   {
-    name: "Vaio",
+    // name: "Quinnox",
     logo: "http://api.qspiders.com/media/clients/Quinnox_ZF14fB1.png",
-    link: "https://www.vaio.com",
+    link: "https://www.quinnox.com/ ",
   },
   {
-    name: "Vaio",
+    // name: "Toshiba",
     logo: "http://api.qspiders.com/media/clients/Toshiba-Leading-Innovation-Logo_n57DHxh.png",
-    link: "https://www.vaio.com",
+    link: "https://toshiba-india.com/",
   },
   {
-    name: "HTC",
+    // name: "3dplm",
     logo: "http://api.qspiders.com/media/clients/3dplm_XXe7oH6.png",
-    link: "https://www.htc.com",
+    link: "https://3dplmsoftware.com/",
   },
+ 
   {
-    name: "HTC",
-    logo: "http://api.qspiders.com/media/clients/allstate-logo-header-170x45_W9ycizB.png",
-    link: "https://www.htc.com",
-  },
-  {
-    name: "HTC",
+    // name: "Metricstream",
     logo: "http://api.qspiders.com/media/clients/Metric_stream_qYDZUOg.png",
-    link: "https://www.htc.com",
+    link: "https://www.metricstream.com/",
   },
   {
-    name: "HTC",
+    // name: "Subex",
     logo: "http://api.qspiders.com/media/clients/Subex_3mL6EYk.jpg",
-    link: "https://www.htc.com",
+    link: "https://www.subex.com/",
   },
   {
-    name: "HTC",
+    // name: "PTW",
     logo: "http://api.qspiders.com/media/clients/Pole_to_Win_u2xelPo.png",
-    link: "https://www.htc.com",
+    link: "https://www.ptw.com/",
   },
   {
-    name: "HTC",
+    // name: "Unisys",
     logo: "http://api.qspiders.com/media/clients/2000px-Unisys_logo.svg__iTADfwk.png",
-    link: "https://www.htc.com",
+    link: "https://www.unisys.com/",
   },
 ]);
 </script>
