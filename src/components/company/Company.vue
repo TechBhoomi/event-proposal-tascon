@@ -69,8 +69,7 @@ const partners = ref([
 
 <style scoped>
 .partners-section {
-  background-color: #fff;
-  padding: 20px 0;
+  background-color: #C6E7FF;
 }
 
 .scroll-container {
@@ -90,7 +89,7 @@ const partners = ref([
   height: 80px;
   /* border: 1px solid #e0e0e0; */
   /* border-radius: 8px; */
-  background-color: #fff;
+  /*background-color: #fff;*/
   margin: 0 10px;
   display: inline-flex;
   justify-content: center;
