@@ -1,4 +1,5 @@
 <script>
+import slide_1 from "../../assets/slide_1.JPG";
 export default {
   data() {
     return {
@@ -26,7 +27,7 @@ export default {
     <v-carousel-item v-for="(slide, i) in slides" :key="i">
       <v-sheet :color="colors[i]" height="100%">
         <div class="d-flex fill-height justify-center align-center">
-          <div class="text-h2">{{ slide }} Slide</div>
+          <img :src="slide_1" alt="" />
         </div>
       </v-sheet>
     </v-carousel-item>
