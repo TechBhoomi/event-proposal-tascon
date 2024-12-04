@@ -2,7 +2,7 @@
   <v-footer
     fluid="true"
     class="text-center d-flex flex-column"
-    style="background-color: #eeee"
+    style="background-color: #3C3D37"
   >
     <div>
       <v-btn
@@ -16,17 +16,17 @@
       ></v-btn>
     </div>
 
-    <div class="pt-0 contact-us">Contact Us</div>
+    <div class="pt-0 contact-us text-[#fff]">Contact Us</div>
 
     <div class="contact-details pt-2">
       <v-row justify="center">
-        <v-col cols="auto" class="d-flex align-center">
+        <v-col cols="auto" class="d-flex align-center text-[#fff]">
           <v-icon>mdi-phone</v-icon>
-          <span class="ml-2">+91 97424 90958 / +91 89519 66099</span> </v-col
+          <span class="ml-2 text-[#fff]">+91 97424 90958 / +91 89519 66099</span> </v-col
         ><br />
-        <v-col cols="auto" class="d-flex align-center">
+        <v-col cols="auto" class="d-flex align-center text-[#fff]">
           <v-icon>mdi-email</v-icon>
-          <span class="ml-2">hire@qspiders.com</span>
+          <span class="ml-2 text-[#fff]">hire@qspiders.com</span>
         </v-col>
       </v-row>
     </div>
