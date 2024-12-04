@@ -88,14 +88,14 @@ const partners = ref([
 .partner-card {
   min-width: 120px;
   height: 80px;
-  border: 1px solid #e0e0e0;
-  border-radius: 8px;
+  /* border: 1px solid #e0e0e0; */
+  /* border-radius: 8px; */
   background-color: #fff;
   margin: 0 10px;
   display: inline-flex;
   justify-content: center;
   align-items: center;
-  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  /* box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1); */
 }
 
 .partner-logo {
