@@ -50,9 +50,9 @@ const headingClasses = computed(() => {
 <style scoped>
 #about-section {
   padding: 1rem;
-  /* background: linear-gradient(rgba(0, 0, 0, 0.048), rgba(0, 0, 0, 0.055)),
-    url("https://devplaced.qspiders.com/illustrate_wave.svg") center/cover no-repeat; */
-    background: linear-gradient(rgba(0, 0, 0, 0.048), rgba(0, 0, 0, 0.055)),
-    url("https://devplaced.qspiders.com/_next/image?url=%2FBackgroundWave.png&w=384&q=75") center/cover no-repeat;
+  background: linear-gradient(rgba(0, 0, 0, 0.048), rgba(0, 0, 0, 0.055)),
+    url("https://devplaced.qspiders.com/illustrate_wave.svg") center/cover no-repeat;
+    /* background: linear-gradient(rgba(0, 0, 0, 0.048), rgba(0, 0, 0, 0.055)),
+    url("https://devplaced.qspiders.com/_next/image?url=%2FBackgroundWave.png&w=384&q=75") center/cover no-repeat; */
 }
 </style>
