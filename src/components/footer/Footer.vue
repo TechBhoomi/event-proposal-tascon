@@ -2,7 +2,7 @@
   <v-footer
     fluid="true"
     class="text-center d-flex flex-column"
-    style="background-color: #3c3d37"
+    style="background-color: #3C4048"
   >
     <div>
       <v-btn
@@ -23,7 +23,7 @@
     <div class="contact-details pt-2">
       <section>
         <div>
-          <v-icon>mdi-phone</v-icon>
+          <v-icon color="#efefef">mdi-phone</v-icon>
           <span class="ml-2 text-[#efefef]"
             >+91 97424 90958 / +91 89519 66099</span
           >

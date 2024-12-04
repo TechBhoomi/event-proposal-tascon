@@ -1,7 +1,7 @@
 <template>
   <section class="p-2 lg:w-[100%] text-justify" id="about-section">
     <h1 class="text-[#FF7F3E] font-sans pb-3" :class="headingClasses">
-      Why Qspiders?
+      Why QSpiders?
     </h1>
     <section class="text-xl">
       <ul class="custom-list font-poppins font-semibold text-sm">

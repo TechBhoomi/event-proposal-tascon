@@ -5,11 +5,11 @@ import { useDisplay } from "vuetify";
 
 const { xs, sm, md, lg, xl } = useDisplay();
 const cardHeightClasses = computed(() => {
-  if (xs.value) return "h-60"; // Extra-small screens
-  if (sm.value) return "h-60"; // Small screens
+  if (xs.value) return "h-72"; // Extra-small screens
+  if (sm.value) return "h-72"; // Small screens
   if (md.value) return "h-64"; // Medium screens
-  if (lg.value) return "h-52"; // Large screens
-  if (xl.value) return "h-44"; // Extra-large screens
+  if (lg.value) return "h-80"; // Large screens
+  if (xl.value) return "h-80"; // Extra-large screens
   return "h-56"; // Default
 });
 const titleClases = computed(() => {
@@ -49,7 +49,10 @@ onBeforeMount(async () => {
     <h1 class="font-sans text-[#FF7F3E] pb-3" :class="headingClasses">
       Courses
     </h1>
-    <article class="rounded-3xl m-auto bg-[#EEEEEE]" :class="courseSectionPadding">
+    <article
+      class="rounded-3xl m-auto bg-[#EEEEEE]"
+      :class="courseSectionPadding"
+    >
       <v-row :no-gutters="false">
         <v-col
           cols="12"
@@ -71,8 +74,12 @@ onBeforeMount(async () => {
               </div>
             </section>
             <section class="p-3">
-              <div class="text-justify text-base font-poppins">
-                {{ course?.description }}
+              <div
+                class="text-justify text-base font-poppins"
+                v-for="sub in course?.subjects"
+                :key="sub"
+              >
+                {{ sub }}
               </div>
               <div>
                 <!-- <v-btn>View</v-btn> -->
