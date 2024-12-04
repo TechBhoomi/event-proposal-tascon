@@ -67,8 +67,11 @@ onBeforeMount(() => {
       <!-- <v-container fluid="true" width="100%">
         <Company />
       </v-container> -->
-      <v-container fluid="true" id="about">
+      <!-- <v-container fluid="true" id="about">
         <About />
+      </v-container> -->
+       <v-container fluid="true" width="100%" id="whyQspiders">
+        <WhyQspiders />
       </v-container>
       <v-container fluid="true" width="100%" id="placements">
         <Placements />
@@ -82,9 +85,7 @@ onBeforeMount(() => {
           <img :src="branch_img" alt="" />
         </section>
       </v-container>
-      <v-container fluid="true" width="100%" id="whyQspiders">
-        <WhyQspiders />
-      </v-container>
+     
       <v-container fluid="true" width="100%">
         <Footer class="static" />
       </v-container>
