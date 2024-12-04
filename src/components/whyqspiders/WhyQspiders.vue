@@ -1,54 +1,65 @@
 <template>
   <section class="p-2 lg:w-[100%] text-justify">
-    <h1 class="text-h3 font-weight-bold pb-1">Why Qspiders?</h1>
+    <h1 class="text-[#FF7F3E] font-sans pb-3" :class="headingClasses">
+      Why Qspiders?
+    </h1>
     <section class="text-xl">
-      <ul class="custom-list pl-6">
-        <li>
-          Qspiders provides industry-relevant training to bridge the gap between
-          academics and the IT industry.
+      <ul class="custom-list font-poppins font-semibold text-sm">
+        <li class="pb-3" :class="listClasses">
+          On-demand Upskilling, Reskilling & Cross-skilling for hired resource
+          on vanilla skills.
         </li>
-        <li>
-          Experienced mentors ensure hands-on learning, preparing students for
-          real-world challenges.
+        <li class="pb-3" :class="listClasses">
+          Tailor made experiential learning programs.
         </li>
-        <li>
-          Extensive placement support helps students secure jobs in top
-          companies globally.
+        <li class="pb-3" :class="listClasses">
+          Dedicated facilities & team for hiring support.
         </li>
-        <li>
-          Specialized courses in software testing and development to enhance
-          technical skills.
+        <li class="pb-3" :class="listClasses">
+          22,000+ Trained resource ready for hiring.
         </li>
-        <li>
-          Interactive sessions and regular assessments boost confidence and
-          learning outcomes.
+        <li class="pb-3" :class="listClasses">
+          10,800+ Female trained resource available for diversity hiring.
         </li>
-        <li>
-          Qspiders provides industry-relevant training to bridge the gap between
-          academics and the IT industry.
+        <li class="pb-3" :class="listClasses">
+          17,300+ Trained resource available having below 4 lakh family income.
         </li>
-        <li>
-          Experienced mentors ensure hands-on learning, preparing students for
-          real-world challenges.
+        <li class="pb-3" :class="listClasses">
+          14,900+ Trained resource with 60% throughout in their academics.
         </li>
-        <li>
-          Extensive placement support helps students secure jobs in top
-          companies globally.
+        <li class="pb-3" :class="listClasses">
+          7,200+ Trained resource above 65% throughout in their academics.
         </li>
-        <li>
-          Specialized courses in software testing and development to enhance
-          technical skills.
-        </li>
-        <li>
-          Interactive sessions and regular assessments boost confidence and
-          learning outcomes.
+        <li class="pb-3" :class="listClasses">
+          8,500+ Trained resource available in Pune/Mumbai.
         </li>
       </ul>
     </section>
   </section>
 </template>
 
-<script setup></script>
+<script setup>
+import { computed } from "vue";
+import { useDisplay } from "vuetify";
+const { xs, sm, md, lg, xl } = useDisplay();
+
+const headingClasses = computed(() => {
+  if (xs.value) return "text-[2rem] font-bold  text-start"; // Extra-small screens
+  if (sm.value) return "text-[2rem] font-bold  text-start"; // Small screens
+  if (md.value) return "text-[2.5rem] font-bold  text-start"; // bold screens
+  if (lg.value) return "text-[2.5rem] font-bold  text-start"; // Large screens
+  if (xl.value) return "text-[2.5rem] font-bold  text-start"; // Extra-large screens
+  return "text-[2.5rem] font-bold text-start"; // Default
+});
+const listClasses = computed(() => {
+  if (xs.value) return "text-[0.9rem] text-start "; // Extra-small screens
+  if (sm.value) return "text-[0.9rem] text-start"; // Small screens
+  if (md.value) return "text-[1rem] text-start"; // bold screens
+  if (lg.value) return "text-[1.1rem] text-start"; // Large screens
+  if (xl.value) return "text-[1.1rem] text-start"; // Extra-large screens
+  return "text-[1.1rem] text-start"; // Default
+});
+</script>
 
 <style scoped>
 .custom-list {
@@ -59,9 +70,7 @@
 .custom-list li {
   display: flex;
   align-items: flex-start;
-  padding: 12px 0;
   position: relative;
-  font-size: 1.13rem;
 }
 
 .custom-list li::before {

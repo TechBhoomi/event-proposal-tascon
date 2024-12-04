@@ -1,29 +1,43 @@
-<!-- <template>
-  <h1 class="text-center mb-4 font-weight-bold text-h4" style="font-size: 2rem">
+<template>
+  <h1 :class="headingClasses" class="font-sans pb-3 text-[#FF7F3E]">
     Placement Statistics
   </h1>
-  <v-container class="statistics-section" fluid>
-    <v-row align="center" justify="center" class="h-100">
+  <section class="statistics-section" fluid>
+    <v-row class="h-100">
       <v-col
         v-for="(stat, index) in animatedStats"
         :key="index"
         cols="12"
         sm="6"
-        md="4"
-        lg="3"
-        class="text-center"
+        md="auto"
+        class="d-flex justify-center stat-col"
       >
-        <h1 class="stat-number">{{ stat.currentValue }}+</h1>
-        <p class="stat-label">{{ stat.label }}</p>
+        <v-card class="stat-card" outlined>
+          <div class="stat-number">{{ stat.currentValue }}</div>
+          <div class="stat-label">{{ stat.label }}</div>
+        </v-card>
       </v-col>
     </v-row>
-  </v-container>
+  </section>
+  <section class="font-poppins text-center pt-2">
+    For more details
+    <a
+      class="text-blue-500 pl-1 cursor-pointer"
+      href="https://placements.qspiders.com/"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      click Here.
+    </a>
+    >
+  </section>
 </template>
 
 <script setup>
-import { ref, onMounted } from "vue";
+import { ref, onMounted, computed } from "vue";
 import axios from "axios";
-
+import { useDisplay } from "vuetify";
+const { xs, sm, md, lg, xl } = useDisplay();
 const stats = ref([]);
 const animatedStats = ref([]);
 
@@ -35,10 +49,9 @@ const fetchData = async () => {
     const apiData = response.data;
     stats.value = [
       { value: apiData.total_placed, label: "Total Placed" },
-      { value: apiData.less_than_60, label: "Less than 60% in degree" },
-      { value: apiData.non_it, label: "NON_IT" },
+      { value: apiData.less_than_60, label: "Less than 60% in Degree" },
+      { value: apiData.non_it, label: "Non IT" },
       { value: apiData.it, label: "IT/CS/IS Candidates" },
-
       { value: apiData.above_60, label: "Throughout 60%" },
     ];
 
@@ -85,134 +98,14 @@ onMounted(async () => {
   const section = document.querySelector(".statistics-section");
   observer.observe(section);
 });
-</script>
 
-<style scoped>
-.statistics-section {
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: white;
-  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.7);
-  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-    url("https://acrossgeo.com/assets/img/stats-bg.jpg") center/cover no-repeat;
-  height: 50vh;
-}
-
-.stat-number {
-  font-size: 2.5rem;
-  font-weight: bold;
-}
-
-.stat-label {
-  font-size: 1.5rem;
-  font-weight: bold;
-}
-
-@media (max-width: 768px) {
-  .statistics-section {
-    background-size: cover;
-    background-position: center;
-    height: 100vh;
-  }
-
-  .stat-number {
-    font-size: 2rem;
-  }
-
-  .stat-label {
-    font-size: 1rem;
-  }
-}
-</style> -->
-
-<template>
-  <h1 class="text-center mb-4 font-weight-bold text-h4" style="font-size: 2rem">
-    Placement Statistics
-  </h1>
-  <v-container class="statistics-section" fluid>
-    <v-row class="h-100">
-      <v-col
-        v-for="(stat, index) in animatedStats"
-        :key="index"
-        cols="12"
-        sm="6"
-        md="auto"
-        class="d-flex justify-center stat-col"
-      >
-        <v-card class="stat-card" outlined>
-          <div class="stat-number">{{ stat.currentValue }}</div>
-          <div class="stat-label">{{ stat.label }}</div>
-        </v-card>
-      </v-col>
-    </v-row>
-  </v-container>
-</template>
-
-<script setup>
-import { ref, onMounted } from "vue";
-import axios from "axios";
-
-const stats = ref([]);
-const animatedStats = ref([]);
-
-const fetchData = async () => {
-  try {
-    const response = await axios.get(
-      "https://hrstbackend.qspiders.com/placements/website_data_reportSummary/"
-    );
-    const apiData = response.data;
-    stats.value = [
-      { value: apiData.total_placed, label: "Total Placed" },
-      { value: apiData.less_than_60, label: "Less than 60% in Degree" },
-      { value: apiData.non_it, label: "Non_IT" },
-      { value: apiData.it, label: "IT/CS/IS Candidates" },
-      { value: apiData.above_60, label: "Throughout 60%" },
-    ];
-
-    animatedStats.value = stats.value.map(stat => ({
-      ...stat,
-      currentValue: 0,
-    }));
-  } catch (error) {
-    console.error("Failed to fetch data:", error);
-  }
-};
-
-const startAnimation = () => {
-  animatedStats.value.forEach((stat, index) => {
-    const increment = Math.ceil(stat.value / 50);
-    const interval = setInterval(() => {
-      if (stat.currentValue < stat.value) {
-        stat.currentValue += increment;
-        if (stat.currentValue > stat.value) {
-          stat.currentValue = stat.value;
-        }
-        animatedStats.value[index] = { ...stat };
-      } else {
-        clearInterval(interval);
-      }
-    }, 50);
-  });
-};
-
-onMounted(async () => {
-  await fetchData();
-
-  const observer = new IntersectionObserver(
-    entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          startAnimation();
-          observer.disconnect();
-        }
-      });
-    },
-    { threshold: 0.5 }
-  );
-  const section = document.querySelector(".statistics-section");
-  observer.observe(section);
+const headingClasses = computed(() => {
+  if (xs.value) return "text-[2rem] font-bold font-bold text-start"; // Extra-small screens
+  if (sm.value) return "text-[2rem] font-bold font-bold text-start"; // Small screens
+  if (md.value) return "text-[2.5rem] font-bold font-bold text-start"; // bold screens
+  if (lg.value) return "text-[2.5rem] font-bold font-bold text-start"; // Large screens
+  if (xl.value) return "text-[2.5rem] font-bold font-bold text-start"; // Extra-large screens
+  return "text-[2.5rem] font-bold font-bold text-start"; // Default
 });
 </script>
 
@@ -250,7 +143,7 @@ onMounted(async () => {
 .stat-number {
   font-size: 2.5rem;
   font-weight: bold;
-  color: #eb5b00;
+  color: #86a7fc;
 }
 
 .stat-label {
@@ -274,10 +167,6 @@ onMounted(async () => {
   }
 }
 </style>
-
-
-
-
 
 <!-- <template>
   <h1 class="text-center mb-4 font-weight-bold text-h4" style="font-size: 2rem">
@@ -461,5 +350,3 @@ onMounted(async () => {
   }
 }
 </style> -->
-
-

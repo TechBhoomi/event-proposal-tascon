@@ -1,21 +1,41 @@
 <template>
   <section
-    class="lg:pt-10 lg:pb-10 pt-7 pb-7 lg:w-[50%] text-justify "
+    class="text-justify flex items-center justify-between pb-2"
+    id="about-section"
   >
-    <h1 class="text-h3 font-weight-bold pb-4">About Qspiders</h1>
-    <section class="text-xl">
-      World's premier software training institution, dedicated to bridging the
-      gap between industry demands and academic curricula. With centers
-      worldwide, Qspiders provides a platform for young minds to cultivate
-      successful careers
-    </section>
+    <article class="flex flex-col">
+      <h1 class="pb-3 font-sans text-[#FF7F3E]" :class="headingClasses">
+        About Qspiders
+      </h1>
+      <section class="text-xl font-poppins text-justify">
+        QSpiders - the leading technology training organization, was started
+        with the goal of bridging the gap between industry demands and academic
+        curriculums. It is designed to work as a 'Finishing School' and is
+        modelled with several learning programs.
+      </section>
+    </article>
   </section>
 </template>
 
 <script setup>
-import { ref } from "vue";
-
-const message = ref("Welcome to Vue-3");
+import { computed, ref } from "vue";
+import { useDisplay } from "vuetify";
+// import bg from "../../assets/undraw_open_note_cgre.png";
+const { xs, sm, md, lg, xl } = useDisplay();
+const headingClasses = computed(() => {
+  if (xs.value) return "text-[2rem] font-bold font-bold text-start"; // Extra-small screens
+  if (sm.value) return "text-[2rem] font-bold font-bold text-start"; // Small screens
+  if (md.value) return "text-[3rem] font-bold font-bold text-start"; // bold screens
+  if (lg.value) return "text-[3rem] font-bold font-bold text-start"; // Large screens
+  if (xl.value) return "text-[3rem] font-bold font-bold text-start"; // Extra-large screens
+  return "h-auto"; // Default
+});
 </script>
 
-<style scoped></style>
+<style scoped>
+#about-section {
+  padding: 1rem;
+  background: linear-gradient(rgba(0, 0, 0, 0.048), rgba(0, 0, 0, 0.055)),
+    url("../../assets/about_bg_image.jpg") center/cover no-repeat;
+}
+</style>

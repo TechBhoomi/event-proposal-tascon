@@ -4,7 +4,7 @@
       class="text-center mb-4 font-weight-bold text-h4"
       style="font-size: 2rem"
     >
-      Our Hiring Partners
+      Our Customers
     </h1>
     <div class="scroll-container">
       <div class="scroll-content">
@@ -12,11 +12,12 @@
           v-for="(partner, index) in [...partners, ...partners]"
           :key="index"
           cols="auto"
-          class="d-flex justify-center align-center partner-card"
+          class="d-flex justify-center align-center partner-card h-8 aspect-auto"
         >
-          <!-- Link wrapping the logo -->
+          <!-- Link wrapping the logo and displaying the partner name below the image -->
           <a :href="partner.link" target="_blank" rel="noopener noreferrer">
-            <img :src="partner.logo" :alt="partner.name" class="partner-logo" />
+            <img :src="partner.logo" :alt="partner.name" class="partner-logo h-10" />
+            <div class="partner-name">{{ partner.name }}</div>
           </a>
         </v-col>
       </div>
@@ -30,46 +31,78 @@ import { ref } from "vue";
 // Updated partners data with links
 const partners = ref([
   {
-    name: "Philips",
-    logo: "https://devplaced.qspiders.com/compLogo-04.svg",
-    link: "https://www.philips.com",
+    // name: "Deloitte",
+    logo: "http://api.qspiders.com/media/clients/Deliotte_C9ukSJM_1_yA82JEr.png",
+    link: "https://www2.deloitte.com/in/en.html",
   },
   {
-    name: "AECOM",
-    logo: "https://devplaced.qspiders.com/compLogo05.svg",
-    link: "https://www.aecom.com",
+    // name: "Capgemini",
+    logo: "http://api.qspiders.com/media/clients/Capegemini_60.png",
+    link: "https://www.capgemini.com/ ",
   },
   {
-    name: "Moderna",
-    logo: "https://devplaced.qspiders.com/compLogo03.svg",
-    link: "https://www.modernatx.com",
+    // name: "Integra",
+    logo: "http://api.qspiders.com/media/clients/Integra_Micro_Systems_chIzJjj.jpg",
+    link: "https://www.integramicro.com/ ",
+  },
+
+  {
+    // name: "EFI",
+    logo: "http://api.qspiders.com/media/clients/EFI_pdQaA6e.png",
+    link: "https://www.efi.com/",
   },
   {
-    name: "Brother",
-    logo: "https://devplaced.qspiders.com/compLogo01.svg",
-    link: "https://www.brother.com",
+    // name: "Arisglobal",
+    logo: "http://api.qspiders.com/media/clients/arisglobal-logo-new_0_ijEbzaU.png",
+    link: "https://www.arisglobal.com/",
   },
   {
-    name: "Wepik",
-    logo: "https://devplaced.qspiders.com/compLogo06.svg",
-    link: "https://www.wepik.com",
+    // name: "Atos",
+    logo: "http://api.qspiders.com/media/clients/atos_logo_4i8GHxl_60.jpg",
+    link: "https://atos.net/en/ ",
   },
   {
-    name: "Vaio",
-    logo: "https://devplaced.qspiders.com/compLogo06.svg",
-    link: "https://www.vaio.com",
+    // name: "Quinnox",
+    logo: "http://api.qspiders.com/media/clients/Quinnox_ZF14fB1.png",
+    link: "https://www.quinnox.com/ ",
   },
   {
-    name: "HTC",
-    logo: "https://devplaced.qspiders.com/compLogo02.svg",
-    link: "https://www.htc.com",
+    // name: "Toshiba",
+    logo: "http://api.qspiders.com/media/clients/Toshiba-Leading-Innovation-Logo_n57DHxh.png",
+    link: "https://toshiba-india.com/",
+  },
+  {
+    // name: "3dplm",
+    logo: "http://api.qspiders.com/media/clients/3dplm_XXe7oH6.png",
+    link: "https://3dplmsoftware.com/",
+  },
+
+  {
+    // name: "Metricstream",
+    logo: "http://api.qspiders.com/media/clients/Metric_stream_qYDZUOg.png",
+    link: "https://www.metricstream.com/",
+  },
+  {
+    // name: "Subex",
+    logo: "http://api.qspiders.com/media/clients/Subex_3mL6EYk.jpg",
+    link: "https://www.subex.com/",
+  },
+  {
+    // name: "PTW",
+    logo: "http://api.qspiders.com/media/clients/Pole_to_Win_u2xelPo.png",
+    link: "https://www.ptw.com/",
+  },
+  {
+    // name: "Unisys",
+    logo: "http://api.qspiders.com/media/clients/2000px-Unisys_logo.svg__iTADfwk.png",
+    link: "https://www.unisys.com/",
   },
 ]);
 </script>
 
 <style scoped>
 .partners-section {
-  background-color: #C6E7FF;
+  background-color: #eeee;
 }
 
 .scroll-container {
@@ -85,21 +118,25 @@ const partners = ref([
 }
 
 .partner-card {
-  min-width: 120px;
-  height: 80px;
-  /* border: 1px solid #e0e0e0; */
-  /* border-radius: 8px; */
-  /*background-color: #fff;*/
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  background-color: #fff;
   margin: 0 10px;
   display: inline-flex;
   justify-content: center;
   align-items: center;
-  /* box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1); */
+  object-fit: cover;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .partner-logo {
-  max-width: 100%;
-  max-height: 100%;
+  aspect-ratio: 16 / 9;
+}
+
+.partner-name {
+  text-align: center;
+  font-size: 0.75rem;
+  margin-top: 8px;
 }
 
 @keyframes scroll-left {
@@ -107,17 +144,24 @@ const partners = ref([
     transform: translateX(0);
   }
   100% {
-    transform: translateX(
-      -50%
-    ); /* Adjust based on the duplicated items for smooth loop */
+    transform: translateX(-50%);
   }
 }
 
 @media (max-width: 768px) {
+  .scroll-content {
+    animation: scroll-left 5s linear infinite; /* Increased scrolling time for mobile */
+  }
+
   .partner-card {
     min-width: 80px;
     height: 60px;
     margin: 0 5px;
+  }
+
+  .partner-logo {
+    max-width: 80%;
+    max-height: 80%;
   }
 }
 </style>
