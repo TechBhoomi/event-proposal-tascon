@@ -19,8 +19,12 @@
       </v-col>
     </v-row>
   </section>
-  <section class="font-poppins text-center p-1">
-    For more details<a class="text-blue-500 pl-1 cursor-pointer" href="https://placements.qspiders.com/">click Here.</a>
+  <section class="font-poppins text-center pt-2">
+    For more details<a
+      class="text-blue-500 pl-1 cursor-pointer"
+      href="https://placements.qspiders.com/"
+      >click Here.</a
+    >
   </section>
 </template>
 
@@ -93,10 +97,10 @@ onMounted(async () => {
 const headingClasses = computed(() => {
   if (xs.value) return "text-[2rem] font-bold font-bold text-start"; // Extra-small screens
   if (sm.value) return "text-[2rem] font-bold font-bold text-start"; // Small screens
-  if (md.value) return "text-[3rem] font-bold font-bold text-start"; // bold screens
-  if (lg.value) return "text-[3rem] font-bold font-bold text-start"; // Large screens
-  if (xl.value) return "text-[3rem] font-bold font-bold text-start"; // Extra-large screens
-  return "h-auto"; // Default
+  if (md.value) return "text-[2.5rem] font-bold font-bold text-start"; // bold screens
+  if (lg.value) return "text-[2.5rem] font-bold font-bold text-start"; // Large screens
+  if (xl.value) return "text-[2.5rem] font-bold font-bold text-start"; // Extra-large screens
+  return "text-[2.5rem] font-bold font-bold text-start"; // Default
 });
 </script>
 
