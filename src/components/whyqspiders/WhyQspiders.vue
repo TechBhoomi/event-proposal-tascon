@@ -2,7 +2,7 @@
   <section class="p-2 lg:w-[100%] text-justify">
     <h1 class="text-h3 font-weight-bold pb-1">Why Qspiders?</h1>
     <section class="text-xl">
-      <ul class="list-disc pl-6">
+      <ul class="custom-list pl-6">
         <li>
           Qspiders provides industry-relevant training to bridge the gap between
           academics and the IT industry.
@@ -51,7 +51,25 @@
 <script setup></script>
 
 <style scoped>
-li {
-  padding: 10px;
+.custom-list {
+  list-style: none;
+  padding-left: 0;
+}
+
+.custom-list li {
+  display: flex;
+  align-items: flex-start;
+  padding: 12px 0;
+  position: relative;
+  font-size: 1.13rem;
+}
+
+.custom-list li::before {
+  content: "✔";
+  font-weight: bold;
+  color: #eb5b00;
+  margin-right: 10px;
+  font-size: 1.4rem;
+  line-height: 1;
 }
 </style>
