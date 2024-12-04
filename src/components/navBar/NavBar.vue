@@ -3,14 +3,30 @@
     <v-btn @click="dialog = true"> Open Dialog </v-btn>
 
     <v-dialog v-model="dialog" width="auto">
-      <v-card
-        max-width="400"
-        prepend-icon="mdi-update"
-        text="Your application will relaunch automatically after the update is complete."
-        title="Update in progress"
-      >
+      <v-card>
         <template v-slot:actions>
-          <v-btn class="ms-auto" text="Ok" @click="dialog = false"></v-btn>
+          <div class="w-[100%]">
+            <h1
+              class="text-center text-2xl pt-2 pb-10 underline underline-offset-2 text-[#FF7F3E]"
+            >
+              Contact
+            </h1>
+            <section
+              class="pb-4 flex items-center justify-center flex-col font-semibold font-poppins"
+            >
+              <div>
+                <span class="ml-2">+91 97424 90958 / +91 89519 66099</span>
+              </div>
+              <div>
+                <span class="ml-2">hire@qspiders.com</span>
+              </div>
+              <div class="pt-5">
+                <v-btn variant="outlined" color="red" @click="dialog = false"
+                  >Close</v-btn
+                >
+              </div>
+            </section>
+          </div>
         </template>
       </v-card>
     </v-dialog>
@@ -33,19 +49,21 @@
         v-for="item in menuItems"
         :key="item.title"
         :ripple="false"
-        @click="navigateToSection(item?.link)"
-        class="d-none d-lg-flex hover:text-orange-400 font-semibold"
+        @click="navigateToSection(item)"
+        class="d-none d-lg-flex"
       >
         <!-- <router-link
           class="hover:text-orange-400 font-semibold"
           :to="item.link"
         > -->
-        {{ item.title }}
+        <span class="hover:text-orange-400 font-semibold">
+          {{ item.title }}
+        </span>
         <!-- </router-link> -->
       </v-btn>
-      <v-btn class="font-semibold" @click="dialog = true">
-        <span class="font-semibold"> Contact </span>
-      </v-btn>
+      <!-- <v-btn class="font-semibold" >
+        <span class="font-semibold hover:text-orange-400"> Contact </span>
+      </v-btn> -->
     </template>
   </v-app-bar>
 
@@ -57,17 +75,13 @@
         :key="item.title"
         @click="drawer = false"
       >
-        <v-list-item-title
-          ><router-link
-            class="hover:text-orange-400 font-semibold"
-            :to="item.link"
-          >
+        <v-list-item-title @click="navigateToSection(item)">
+          <span class="hover:text-orange-400 font-semibold">
             {{ item.title }}
-          </router-link></v-list-item-title
-        >
-      </v-list-item>
-      <v-list-item>
-        <v-list-item-title>Contact</v-list-item-title>
+          </span>
+          <!-- <router-link class="hover:text-orange-400 font-semibold">
+          </router-link> -->
+        </v-list-item-title>
       </v-list-item>
     </v-list>
   </v-navigation-drawer>
@@ -112,12 +126,17 @@ const taglineClasses = computed(() => {
 });
 const router = useRouter();
 const navigateToSection = section => {
-  router.push(section);
+  if (section.link) {
+    router.push(section.link);
+  } else {
+    dialog.value = true;
+  }
 };
 const menuItems = [
   { title: "About", link: "/#about" },
   { title: "Courses", link: "/#courses" },
   { title: "Placements", link: "/#placements" },
+  { title: "Contact", link: null },
 ];
 let dialog = ref(false);
 </script>
