@@ -17,6 +17,7 @@ export default {
 </script>
 
 <template>
+  <!-- <img :src="slide_1" alt=""> -->
   <v-carousel
     height="500"
     show-arrows="hover"
@@ -27,7 +28,7 @@ export default {
     <v-carousel-item v-for="(slide, i) in slides" :key="i">
       <v-sheet :color="colors[i]" height="100%">
         <div class="d-flex fill-height justify-center align-center">
-          <img :src="slide_1" alt="" />
+          <p>Slide {{ i+1 }}</p>
         </div>
       </v-sheet>
     </v-carousel-item>
