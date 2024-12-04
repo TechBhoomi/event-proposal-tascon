@@ -8,6 +8,7 @@ import * as directives from "vuetify/directives";
 import "@mdi/font/css/materialdesignicons.css";
 import { createPinia } from "pinia";
 import router from "./routes/routes";
+import "./assets/css/style.css";
 const pinia = createPinia();
 const vuetify = createVuetify({
   components,

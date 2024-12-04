@@ -59,6 +59,8 @@ onBeforeMount(() => {
 
 <template>
   <v-app>
+    <div class="fixed-shadow left-[-250px]"></div>
+    <div class="fixed-shadow right-[-250px]"></div>
     <NavBar />
     <v-main>
       <v-container width="100%" fluid="true" id="home">
