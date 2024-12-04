@@ -2,14 +2,14 @@
   <h1 :class="headingClasses" class="font-sans pb-3 text-[#FF7F3E]">
     Placement Statistics
   </h1>
-  <section class="statistics-section">
+  <section class="statistics-section w-full">
     <a
       class="text-blue-500 pl-1 cursor-pointer"
       href="https://placements.qspiders.com/"
       target="_blank"
       rel="noopener noreferrer"
     >
-      <img :src="placement_stat" alt="" />
+      <img :src="placement_stat" alt="" class="w-full" />
     </a>
     <!-- <v-row class="h-100">
       <v-col
@@ -36,7 +36,7 @@
 
 <script setup>
 import { ref, onMounted, computed } from "vue";
-import placement_stat from "../../assets/placements_stats_.jpg";
+import placement_stat from "../../assets/placements_stats_.png";
 import axios from "axios";
 import { useDisplay } from "vuetify";
 const { xs, sm, md, lg, xl } = useDisplay();
