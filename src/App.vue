@@ -8,7 +8,7 @@ import Placements from "./components/placements/Placements.vue";
 import Company from "./components/company/Company.vue";
 import WhyQspiders from "./components/whyqspiders/WhyQspiders.vue";
 import Footer from "./components/footer/Footer.vue";
-import branch_img from "./assets/branch_details.png";
+import branch_img from "./assets/branch_background.png";
 import { computed, onBeforeMount, ref } from "vue";
 
 // Track the current scroll position
