@@ -3,7 +3,6 @@ import Cards from "./components/cards/Cards.vue";
 import Carousel from "./components/carousel/Carousel.vue";
 import NavBar from "./components/navBar/NavBar.vue";
 import About from "./components/about/About.vue";
-
 import Placements from "./components/placements/Placements.vue";
 import Company from "./components/company/Company.vue";
 import WhyQspiders from "./components/whyqspiders/WhyQspiders.vue";
@@ -78,11 +77,13 @@ onBeforeMount(() => {
       </v-container>
       <v-container id="courses" class="pa-3">
         <Cards />
-      </v-container>
+      </v-container>    
       <v-container class="pa-3">
         <h3 :class="headingClasses" class="text-[#FF7F3E]">Branches</h3>
         <section class="flex w-full items-center justify-center border-2 rounded-md">
-          <img :src="branch_img" alt="" />
+          <a href="https://qspiders.com/contact" target="_blank" rel="noopener noreferrer">
+    <img :src="branch_img" alt="Branch Image" class="cursor-pointer" />
+  </a>
         </section>
       </v-container>
 
