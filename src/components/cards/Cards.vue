@@ -46,7 +46,7 @@ onBeforeMount(async () => {
 
 <template>
   <section>
-    <h1 class="font-sans text-[#FF7F3E] pb-3" :class="headingClasses">
+    <h1 class="text-[#FF7F3E] pb-3" :class="headingClasses">
       Courses
     </h1>
     <article

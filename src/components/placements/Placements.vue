@@ -1,5 +1,5 @@
 <template>
-  <h1 :class="headingClasses" class="font-sans pb-3 text-[#FF7F3E]">
+  <h1 :class="headingClasses" class="pb-3 text-[#FF7F3E]">
     Placement Statistics
   </h1>
   <section class="statistics-section w-full">

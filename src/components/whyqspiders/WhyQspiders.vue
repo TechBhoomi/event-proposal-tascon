@@ -1,10 +1,10 @@
 <template>
   <section class="p-2 lg:w-[100%] text-justify" id="about-section">
-    <h1 class="text-[#FF7F3E] font-sans pb-3" :class="headingClasses">
+    <h1 class="text-[#FF7F3E] pb-3" :class="headingClasses">
       Why QSpiders?
     </h1>
-    <section class="text-xl">
-      <ul class="custom-list font-poppins font-semibold text-sm">
+    <section class="">
+      <ul class="custom-list font-bold text-xl text-gray-600">
         <li class="pb-3" :class="listClasses">
           On-demand Upskilling, Reskilling & Cross-skilling for hired resource
           on vanilla skills.
@@ -85,7 +85,7 @@ const listClasses = computed(() => {
   padding: 1rem;
   /* background: linear-gradient(rgba(0, 0, 0, 0.048), rgba(0, 0, 0, 0.055)),
     url("https://devplaced.qspiders.com/_next/image?url=%2FBackgroundWave.png&w=384&q=75") center/cover no-repeat; */
-      background: linear-gradient(rgba(0, 0, 0, 0.048), rgba(0, 0, 0, 0.055)),
+      background: linear-gradient(rgba(156, 155, 155, 0.048), rgba(222, 106, 11, 0.055)),
     url("https://devplaced.qspiders.com/illustrate_wave.svg") center/cover no-repeat;
 }
 </style>
