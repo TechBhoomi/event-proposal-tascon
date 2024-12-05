@@ -61,8 +61,7 @@ onBeforeMount(() => {
   <v-app>
     <NavBar />
     <v-main class="">
-
-      <v-container  id="home">
+      <v-container id="home">
         <Carousel />
       </v-container>
       <!-- <v-container >
@@ -71,23 +70,23 @@ onBeforeMount(() => {
       <!-- <v-container fluid="true" id="about">
         <About />
       </v-container> -->
-       <v-container  id="whyQspiders">
+      <v-container id="whyQspiders">
         <WhyQspiders />
       </v-container>
-      <v-container  id="placements">
+      <v-container id="placements">
         <Placements />
       </v-container>
-      <v-container  id="courses" class="pa-3">
+      <v-container id="courses" class="pa-3">
         <Cards />
       </v-container>
-      <v-container  class="pa-3">
+      <v-container class="pa-3">
         <h3 :class="headingClasses" class="text-[#FF7F3E]">Branches</h3>
-        <section class="flex w-full items-center justify-center">
+        <section class="flex w-full items-center justify-center border-2 rounded-md">
           <img :src="branch_img" alt="" />
         </section>
       </v-container>
-     
-      <v-container >
+
+      <v-container>
         <Footer class="static" />
       </v-container>
     </v-main>
