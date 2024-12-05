@@ -60,7 +60,7 @@ onBeforeMount(() => {
 <template>
   <v-app>
     <NavBar />
-    <v-main class="bg-gray-50">
+    <v-main class="">
 
       <v-container  id="home">
         <Carousel />
