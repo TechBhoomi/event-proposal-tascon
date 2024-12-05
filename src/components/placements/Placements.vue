@@ -2,7 +2,7 @@
   <h1 :class="headingClasses" class="pb-3 text-[#FF7F3E]">
     Placement Statistics
   </h1>
-  <section class="statistics-section w-full">
+  <section class="statistics-section w-full border-2 rounded-md">
     <a
       class="text-blue-500 pl-1 cursor-pointer w-full"
       href="https://placements.qspiders.com/"
