@@ -7,31 +7,31 @@ const { xs, sm, md, lg, xl } = useDisplay();
 const cardHeightClasses = computed(() => {
   if (xs.value) return "h-72"; // Extra-small screens
   if (sm.value) return "h-72"; // Small screens
-  if (md.value) return "h-64"; // Medium screens
-  if (lg.value) return "h-80"; // Large screens
-  if (xl.value) return "h-80"; // Extra-large screens
+  if (md.value) return "h-34"; // Medium screens
+  if (lg.value) return "h-60"; // Large screens
+  if (xl.value) return "h-60"; // Extra-large screens
   return "h-56"; // Default
 });
 const titleClases = computed(() => {
-  if (xs.value) return "text-[1rem] font-bold font-bold text-start"; // Extra-small screens
-  if (sm.value) return "text-[1.2rem] font-bold font-bold text-start"; // Small screens
-  if (md.value) return "text-[1rem]"; // bold screens
-  if (lg.value) return "text-[1.2rem] font-bold font-bold text-start"; // Large screens
-  if (xl.value) return "text-xl font-bold font-bold text-start"; // Extra-large screens
+  if (xs.value) return "text-[1rem] font-bold text-start"; // Extra-small screens
+  if (sm.value) return "text-[1.2rem] font-bold text-start"; // Small screens
+  if (md.value) return "text-[1rem]"; // Medium screens
+  if (lg.value) return "text-[1.2rem] font-bold text-start"; // Large screens
+  if (xl.value) return "text-xl font-bold text-start"; // Extra-large screens
   return "h-auto"; // Default
 });
 const headingClasses = computed(() => {
-  if (xs.value) return "text-[2rem] font-bold font-bold text-start"; // Extra-small screens
-  if (sm.value) return "text-[2rem] font-bold font-bold text-start"; // Small screens
-  if (md.value) return "text-[2.5rem] font-bold font-bold text-start"; // bold screens
-  if (lg.value) return "text-[2.5rem] font-bold font-bold text-start"; // Large screens
-  if (xl.value) return "text-[2.5rem] font-bold font-bold text-start"; // Extra-large screens
-  return "text-[2.5rem] font-bold font-bold text-start"; // Default
+  if (xs.value) return "text-[2rem] font-bold text-start"; // Extra-small screens
+  if (sm.value) return "text-[2rem] font-bold text-start"; // Small screens
+  if (md.value) return "text-[2.5rem] font-bold text-start"; // Medium screens
+  if (lg.value) return "text-[2.5rem] font-bold text-start"; // Large screens
+  if (xl.value) return "text-[2.5rem] font-bold text-start"; // Extra-large screens
+  return "text-[2.5rem] font-bold text-start"; // Default
 });
 const courseSectionPadding = computed(() => {
   if (xs.value) return "p-3"; // Extra-small screens
   if (sm.value) return "p-3"; // Small screens
-  if (md.value) return "p-10"; // bold screens
+  if (md.value) return "p-10"; // Medium screens
   if (lg.value) return "p-10"; // Large screens
   if (xl.value) return "p-10"; // Extra-large screens
   return "p-10"; // Default
@@ -74,15 +74,14 @@ onBeforeMount(async () => {
               </div>
             </section>
             <section class="p-3">
-              <div
-                class="text-justify text-base font-poppins"
-                v-for="sub in course?.subjects"
-                :key="sub"
-              >
-                {{ sub }}
-              </div>
-              <div>
-                <!-- <v-btn>View</v-btn> -->
+              <div class="grid grid-cols-2 gap-2">
+                <div
+                  class="text-justify text-base font-poppins"
+                  v-for="sub in course?.subjects"
+                  :key="sub"
+                >
+                  {{ sub }}
+                </div>
               </div>
             </section>
           </v-card>
@@ -111,5 +110,12 @@ onBeforeMount(async () => {
 
 v-btn {
   margin-top: auto;
+}
+
+/* Optional fallback for custom CSS grid if Tailwind is unavailable */
+.subject-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* Two columns */
+  gap: 8px; /* Adjust gap as needed */
 }
 </style>
