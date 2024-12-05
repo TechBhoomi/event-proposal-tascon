@@ -46,9 +46,7 @@ onBeforeMount(async () => {
 
 <template>
   <section>
-    <h1 class="text-[#FF7F3E] pb-3" :class="headingClasses">
-      Courses
-    </h1>
+    <h1 class="text-[#FF7F3E] pb-3" :class="headingClasses">Courses</h1>
     <article
       class="rounded-3xl m-auto bg-[#EEEEEE]"
       :class="courseSectionPadding"
@@ -79,15 +77,15 @@ onBeforeMount(async () => {
                 v-for="sub in course?.subjects"
                 :key="sub"
               >
-              <v-btn
-              color="orange-lighten-1"
-              :text="sub"
-              border="thin"
-              class="text-none"
-              size="small"
-              variant="tonal"
-              flat
-              ></v-btn>
+                <v-btn
+                  color="orange-lighten-1"
+                  :text="sub?.charAt(0).toUpperCase() + sub?.slice(1)"
+                  border="thin"
+                  class="text-none"
+                  size="small"
+                  variant="tonal"
+                  flat
+                ></v-btn>
               </div>
               <div>
                 <!-- <v-btn>View</v-btn> -->
