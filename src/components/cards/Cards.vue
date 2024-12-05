@@ -5,11 +5,11 @@ import { useDisplay } from "vuetify";
 
 const { xs, sm, md, lg, xl } = useDisplay();
 const cardHeightClasses = computed(() => {
-  if (xs.value) return "h-72"; // Extra-small screens
-  if (sm.value) return "h-72"; // Small screens
-  if (md.value) return "h-34"; // Medium screens
-  if (lg.value) return "h-60"; // Large screens
-  if (xl.value) return "h-60"; // Extra-large screens
+  if (xs.value) return "h-48"; // Extra-small screens
+  if (sm.value) return "h-48"; // Small screens
+  if (md.value) return "h-40"; // Medium screens
+  if (lg.value) return "h-40"; // Large screens
+  if (xl.value) return "h-40"; // Extra-large screens
   return "h-56"; // Default
 });
 const titleClases = computed(() => {
@@ -46,7 +46,7 @@ onBeforeMount(async () => {
 
 <template>
   <section>
-    <h1 class="font-sans text-[#FF7F3E] pb-3" :class="headingClasses">
+    <h1 class="text-[#FF7F3E] pb-3" :class="headingClasses">
       Courses
     </h1>
     <article
@@ -73,15 +73,24 @@ onBeforeMount(async () => {
                 </div>
               </div>
             </section>
-            <section class="p-3">
-              <div class="grid grid-cols-2 gap-2">
-                <div
-                  class="text-justify text-base font-poppins"
-                  v-for="sub in course?.subjects"
-                  :key="sub"
-                >
-                  {{ sub }}
-                </div>
+            <section class="flex flex-wrap">
+              <div
+                class="p-1 text-justify text-base"
+                v-for="sub in course?.subjects"
+                :key="sub"
+              >
+              <v-btn
+              color="orange-lighten-1"
+              :text="sub"
+              border="thin"
+              class="text-none"
+              size="small"
+              variant="tonal"
+              flat
+              ></v-btn>
+              </div>
+              <div>
+                <!-- <v-btn>View</v-btn> -->
               </div>
             </section>
           </v-card>

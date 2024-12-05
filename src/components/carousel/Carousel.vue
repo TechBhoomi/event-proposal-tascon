@@ -1,10 +1,9 @@
 <script>
-import slideSvg1 from "../../assets/Hiring Process (2).svg";
-import slideSvg2 from "../../assets/Hiring Process (3).svg";
-import slideSvg3 from "../../assets/Hiring Process.svg";
-import slideSvg4 from "../../assets/Our Journey - Stats.svg";
-import slideSvg5 from "../../assets/Skills we train - Technologies.svg";
-
+import slide_1 from "../../assets/1.png";
+import slide_2 from "../../assets/2.png";
+import slide_3 from "../../assets/3.png";
+import slide_4 from "../../assets/4.png";
+import slide_5 from "../../assets/5.png";
 export default {
   data() {
     return {
@@ -15,12 +14,16 @@ export default {
         { id: 4, src: slideSvg4, label: "Fourth Slide" },
         { id: 5, src: slideSvg5, label: "Fifth Slide" },
       ],
+      slides: [slide_1, slide_2, slide_3, slide_4, slide_5],
     };
   },
 };
 </script>
 
-<template >
+<template>
+  <!-- <img :src="slide_1" alt=""> -->
+  <div class="fixed-shadow left-[-250px]"></div>
+  <div class="fixed-shadow right-[-250px]"></div>
   <v-carousel
     height="500"
     id="about-section"
@@ -29,17 +32,19 @@ export default {
     hide-delimiter-background
     class="carouselForm"
   >
-    <v-carousel-item v-for="slide in slides" :key="slide.id">
-      <v-sheet height="100%">
+    <v-carousel-item v-for="(slide, i) in slides" :key="i" 
+    :src="slide"
+    >
+      <!-- <v-sheet :color="colors[i]" height="100%">
         <div class="d-flex fill-height justify-center align-center">
-          <!-- SVG Image -->
+         
           <img
             :src="slide.src"
             :alt="`Slide ${slide.label}`"
             class="h-full w-auto"
           />
         </div>
-      </v-sheet>
+      </v-sheet> -->
     </v-carousel-item>
   </v-carousel>
 </template>

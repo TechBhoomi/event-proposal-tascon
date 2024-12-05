@@ -60,33 +60,34 @@ onBeforeMount(() => {
 <template>
   <v-app>
     <NavBar />
-    <v-main>
-      <v-container width="100%" fluid="true" id="home">
+    <v-main class="">
+
+      <v-container  id="home">
         <Carousel />
       </v-container>
-      <!-- <v-container fluid="true" width="100%">
+      <!-- <v-container >
         <Company />
       </v-container> -->
       <!-- <v-container fluid="true" id="about">
         <About />
       </v-container> -->
-       <v-container fluid="true" width="100%" id="whyQspiders">
+       <v-container  id="whyQspiders">
         <WhyQspiders />
       </v-container>
-      <v-container fluid="true" width="100%" id="placements">
+      <v-container  id="placements">
         <Placements />
       </v-container>
-      <v-container fluid="true" width="100%" id="courses" class="pa-3">
+      <v-container  id="courses" class="pa-3">
         <Cards />
       </v-container>
-      <v-container fluid="true" width="100%" class="pa-3">
+      <v-container  class="pa-3">
         <h3 :class="headingClasses" class="text-[#FF7F3E]">Branches</h3>
         <section class="flex w-full items-center justify-center">
           <img :src="branch_img" alt="" />
         </section>
       </v-container>
      
-      <v-container fluid="true" width="100%">
+      <v-container >
         <Footer class="static" />
       </v-container>
     </v-main>

@@ -7,7 +7,7 @@
       <h1 class="pb-3 font-sans text-[#FF7F3E]" :class="headingClasses">
         About Qspiders
       </h1>
-      <section class="text-xl font-poppins text-justify">
+      <section class="text-xl text-justify text-gray-100">
         <!-- QSpiders - the leading technology training organization, was started
         with the goal of bridging the gap between industry demands and academic
         curriculums. It is designed to work as a 'Finishing School' and is
